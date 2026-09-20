@@ -21,7 +21,7 @@
     ".ai/MEMORY.md"
   ],
   "permission": {
-    "bash": "ask",
+    "bash": "allow",
     "webfetch": "ask",
     "write": "ask",
     "edit": "ask"
