@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Seiji Tsumura - Analista Programador / Desarrollador</title>
+  <meta name="description" content="Curriculum Vitae profesional de Seiji Tsumura, Analista Programador con +10 años de experiencia en desarrollo web, sistemas, bases de datos e inteligencia artificial.">
+  <meta name="keywords" content="Seiji Tsumura, Analista Programador, Desarrollador, Angular, Symfony, PHP, Python, MariaDB, SQL Server, Docker, IA, Uruguay">
+  <meta name="author" content="Seiji Tsumura">
+
+  <!-- Estilos CSS profesionales e inline (Autocontenidos sin dependencias externas) -->
+  <style>
+    /* ==========================================================================
+       VARIABLES Y RESET BASE (ATS-FRIENDLY & PRINT-READY)
+       ========================================================================== */
+    :root {
+      --color-primary: #2c3e50;       /* Azul oscuro para títulos */
+      --color-primary-dark: #1a252f;
+      --color-primary-light: #34495e;
+      --color-accent: #2980b9;        /* Azul de acento para enlaces y detalles */
+      --color-accent-subtle: #ebf5fb;
+      --color-secondary: #7f8c8d;     /* Gris para subtítulos y metadatos */
+      --color-text-dark: #2d3748;     /* Color de texto principal de alta legibilidad */
+      --color-text-muted: #596775;    /* Texto secundario accesible */
+      --color-border: #e2e8f0;        /* Líneas divisorias suaves */
+      --color-border-dark: #cbd5e1;
+      --color-bg-light: #f8fafc;
+      --color-tag-bg: #f1f5f9;
+      --color-tag-text: #1e293b;
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
+      --line-height-normal: 1.48;
+      --transition: all 0.2s ease-in-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      font-size: 13.5px;
+      line-height: var(--line-height-normal);
+      color: var(--color-text-dark);
+      background-color: #eaeff5;
+      padding: 20px 10px 40px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    a:hover {
+      text-decoration: underline;
+      color: var(--color-primary-dark);
+    }
+
+    /* ==========================================================================
+       BARRA DE ACCIONES SUPERIOR (SOLO EN PANTALLA)
+       ========================================================================== */
+    .action-bar {
+      max-width: 920px;
+      margin: 0 auto 16px;
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 10px 18px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .action-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .action-badge-ats {
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 12px;
+      border: 1px solid #c8e6c9;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 7px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: var(--transition);
+      background: #ffffff;
+      user-select: none;
+    }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: #ffffff;
+      border-color: var(--color-primary);
+    }
+    .btn-primary:hover {
+      background-color: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background-color: #f8fafc;
+      color: var(--color-primary);
+      border-color: #cbd5e1;
+    }
+    .btn-secondary:hover {
+      background-color: #e2e8f0;
+      color: var(--color-primary-dark);
+      text-decoration: none;
+    }
+
+    .toggle-group {
+      display: inline-flex;
+      background: #e2e8f0;
+      padding: 2px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+    }
+
+    .toggle-btn {
+      padding: 5px 10px;
+      font-size: 11.5px;
+      font-weight: 600;
+      border: none;
+      background: transparent;
+      color: #475569;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .toggle-btn.active {
+      background: #ffffff;
+      color: var(--color-primary);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Print notification banner on screen */
+    .print-tip {
+      max-width: 920px;
+      margin: 0 auto 14px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      padding: 8px 14px;
+      font-size: 12px;
+      color: #1e40af;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    /* ==========================================================================
+       CONTENEDOR DEL CV (FORMATO PROFESIONAL A4)
+       ========================================================================== */
+    .cv-container {
+      max-width: 920px;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      position: relative;
+    }
+
+    /* Franja superior estética */
+    .top-accent-bar {
+      height: 6px;
+      background: linear-gradient(90deg, #2c3e50 0%, #2980b9 50%, #34495e 100%);
+      width: 100%;
+    }
+
+    /* ENCABEZADO PRINCIPAL (HEADER) */
+    .cv-header {
+      padding: 26px 32px 20px;
+      border-bottom: 2px solid var(--color-border);
+      background-color: #ffffff;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .header-info {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .applicant-name {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: var(--color-primary);
+      line-height: 1.15;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .applicant-title {
+      font-size: 15.5px;
+      font-weight: 600;
+      color: var(--color-accent);
+      letter-spacing: 0.2px;
+      margin-bottom: 10px;
+    }
+
+    .applicant-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      font-size: 12.5px;
+      color: var(--color-text-muted);
+    }
+
+    .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+
+    .meta-item span.icon {
+      color: var(--color-primary);
+      font-size: 12px;
+    }
+
+    /* PERFIL PROFESIONAL (EXTRACTO EJECUTIVO ATS) */
+    .header-summary {
+      margin-top: 14px;
+      padding: 10px 14px;
+      background-color: #f8fafc;
+      border-left: 3.5px solid var(--color-accent);
+      border-radius: 0 4px 4px 0;
+      font-size: 13px;
+      color: var(--color-text-dark);
+      line-height: 1.5;
+    }
+
+    .header-summary strong {
+      color: var(--color-primary);
+    }
+
+    /* ==========================================================================
+       DISTRIBUCIÓN EN 2 COLUMNAS (ATS-FRIENDLY & RESPONSIVE)
+       ========================================================================== */
+    .cv-body {
+      display: flex;
+      flex-direction: row;
+      padding: 22px 32px 30px;
+      gap: 28px;
+    }
+
+    /* Columna Principal (Izquierda - ~64%) */
+    .main-column {
+      flex: 1.85;
+      min-width: 0;
+    }
+
+    /* Columna Lateral (Derecha - ~36%) */
+    .side-column {
+      flex: 1.05;
+      min-width: 220px;
+      border-left: 1px solid var(--color-border);
+      padding-left: 24px;
+    }
+
+    /* SECCIONES Y ENCABEZADOS */
+    .cv-section {
+      margin-bottom: 20px;
+    }
+    .cv-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding-bottom: 5px;
+      border-bottom: 1.5px solid var(--color-border);
+      margin-bottom: 12px;
+    }
+
+    .section-title .title-icon {
+      color: var(--color-accent);
+      font-size: 11px;
+    }
+
+    /* EXPERIENCIA LABORAL ITEMS */
+    .job-item {
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .job-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 2px;
+    }
+
+    .job-role {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .job-period {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--color-secondary);
+      background-color: #f1f5f9;
+      padding: 1px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .job-company {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-bottom: 5px;
+    }
+
+    .job-company .company-desc {
+      font-weight: 400;
+      color: var(--color-secondary);
+    }
+
+    .job-bullets {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 4px;
+    }
+
+    .job-bullets li {
+      font-size: 12.5px;
+      color: var(--color-text-dark);
+      line-height: 1.45;
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 3.5px;
+    }
+
+    .job-bullets li::before {
+      content: "▶";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      font-size: 8px;
+      color: var(--color-accent);
+    }
+
+    .job-tech-stack {
+      margin-top: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .tech-stack-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--color-secondary);
+      text-transform: uppercase;
+      margin-right: 3px;
+    }
+
+    .mini-badge {
+      font-size: 10.5px;
+      background-color: #edf2f7;
+      color: #334155;
+      padding: 1.5px 6px;
+      border-radius: 3px;
+      font-weight: 500;
+    }
+
+    /* PROYECTOS DESTACADOS */
+    .project-card {
+      background-color: #fafbfc;
+      border: 1px solid #e2e8f0;
+      border-radius: 5px;
+      padding: 9px 11px;
+      margin-bottom: 10px;
+      transition: var(--transition);
+    }
+    .project-card:last-child {
+      margin-bottom: 0;
+    }
+    .project-card:hover {
+      border-color: #cbd5e1;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    }
+
+    .project-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 3px;
+    }
+
+    .project-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .project-link {
+      font-size: 11px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      color: var(--color-accent);
+    }
+
+    .project-desc {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      line-height: 1.4;
+      margin-bottom: 5px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    /* EDUCACIÓN Y FORMACIÓN */
+    .edu-item {
+      margin-bottom: 10px;
+    }
+    .edu-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .edu-degree {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .edu-year {
+      font-size: 11.5px;
+      color: var(--color-secondary);
+      font-weight: 600;
+    }
+
+    .edu-institution {
+      font-size: 12px;
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+
+    .edu-note {
+      font-size: 11.5px;
+      color: #27ae60;
+      font-weight: 600;
+      margin-top: 1px;
+    }
+
+    /* COLUMNA LATERAL (SKILLS, CONTACTO, REFERENCIAS) */
+    .contact-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .contact-item {
+      font-size: 12px;
+      margin-bottom: 7px;
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+      line-height: 1.35;
+      word-break: break-word;
+    }
+
+    .contact-item .icon {
+      color: var(--color-accent);
+      font-size: 12px;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    .contact-item strong {
+      color: var(--color-primary);
+      display: block;
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .contact-item a {
+      color: var(--color-text-dark);
+    }
+    .contact-item a:hover {
+      color: var(--color-accent);
+    }
+
+    /* Categorías de Habilidades */
+    .skill-group {
+      margin-bottom: 10px;
+    }
+    .skill-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-group-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--color-primary-light);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .skill-group-name span.bullet {
+      color: var(--color-accent);
+      font-size: 8px;
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .skill-pill {
+      font-size: 11px;
+      background-color: var(--color-tag-bg);
+      color: var(--color-tag-text);
+      padding: 2.5px 7px;
+      border-radius: 4px;
+      font-weight: 500;
+      border: 1px solid #e2e8f0;
+      line-height: 1.3;
+    }
+
+    .skill-pill.highlight {
+      background-color: #ebf5fb;
+      border-color: #bcdbf3;
+      color: #1a5276;
+      font-weight: 600;
+    }
+
+    /* Habilidades blandas */
+    .soft-skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3px;
+    }
+
+    .soft-skill-item {
+      font-size: 11.8px;
+      color: var(--color-text-dark);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 2px 0;
+    }
+
+    .soft-skill-item .star {
+      color: #f39c12;
+      font-size: 10px;
+    }
+
+    /* Idiomas */
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      padding: 3.5px 0;
+      border-bottom: 1px dashed var(--color-border);
+    }
+    .lang-item:last-child {
+      border-bottom: none;
+    }
+
+    .lang-name {
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .lang-level {
+      font-size: 11px;
+      color: var(--color-secondary);
+      font-weight: 500;
+      background-color: #f1f5f9;
+      padding: 1px 6px;
+      border-radius: 3px;
+    }
+
+    /* Referencias */
+    .ref-item {
+      font-size: 11.5px;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px dotted var(--color-border);
+    }
+    .ref-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .ref-name {
+      font-weight: 700;
+      color: var(--color-primary);
+      font-size: 12px;
+      line-height: 1.25;
+    }
+
+    .ref-role {
+      color: var(--color-secondary);
+      font-size: 11px;
+      margin-bottom: 2px;
+      line-height: 1.25;
+    }
+
+    .ref-phone {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--color-accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    /* PIE DE PÁGINA */
+    .cv-footer {
+      border-top: 1px solid var(--color-border);
+      padding: 12px 32px;
+      background-color: #fafbfc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--color-secondary);
+    }
+
+    .ats-verified-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: #27ae60;
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       MODO COMPACTO (OPCIÓN PARA 1 PÁGINA ULTRA-AJUSTADA)
+       ========================================================================== */
+    .compact-mode .cv-header {
+      padding: 18px 24px 14px;
+    }
+    .compact-mode .applicant-name {
+      font-size: 24px;
+      margin-bottom: 2px;
+    }
+    .compact-mode .applicant-title {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .compact-mode .header-summary {
+      margin-top: 10px;
+      padding: 8px 12px;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    .compact-mode .cv-body {
+      padding: 16px 24px 20px;
+      gap: 20px;
+    }
+    .compact-mode .cv-section {
+      margin-bottom: 14px;
+    }
+    .compact-mode .section-title {
+      font-size: 13px;
+      margin-bottom: 8px;
+      padding-bottom: 3px;
+    }
+    .compact-mode .job-item {
+      margin-bottom: 11px;
+    }
+    .compact-mode .job-bullets li {
+      font-size: 11.5px;
+      line-height: 1.35;
+      margin-bottom: 2px;
+    }
+    .compact-mode .project-card {
+      padding: 6px 8px;
+      margin-bottom: 6px;
+    }
+    .compact-mode .project-desc {
+      font-size: 11px;
+      margin-bottom: 3px;
+    }
+    .compact-mode .edu-item {
+      margin-bottom: 6px;
+    }
+    .compact-mode .skill-group {
+      margin-bottom: 7px;
+    }
+    .compact-mode .skill-pill {
+      font-size: 10px;
+      padding: 1px 5px;
+    }
+    .compact-mode .contact-item {
+      margin-bottom: 5px;
+      font-size: 11px;
+    }
+    .compact-mode .ref-item {
+      margin-bottom: 6px;
+      padding-bottom: 4px;
+    }
+
+    /* ==========================================================================
+       MODAL: COPIAR CV EN TEXTO PLANO ATS
+       ========================================================================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(2px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 16px;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #ffffff;
+      max-width: 680px;
+      width: 100%;
+      max-height: 85vh;
+      border-radius: 8px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: modalFadeIn 0.2s ease-out;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-header {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8fafc;
+    }
+
+    .modal-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: var(--color-secondary);
+      line-height: 1;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .modal-close:hover {
+      background-color: #e2e8f0;
+      color: var(--color-primary);
+    }
+
+    .modal-body {
+      padding: 16px 18px;
+      overflow-y: auto;
+      font-size: 13px;
+    }
+
+    .ats-textarea {
+      width: 100%;
+      height: 360px;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 12px;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      background: #f8fafc;
+      color: #1e293b;
+      resize: vertical;
+      line-height: 1.45;
+    }
+
+    .modal-footer {
+      padding: 12px 18px;
+      border-top: 1px solid var(--color-border);
+      background-color: #f8fafc;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    /* Notificación Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--color-primary-dark);
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 10000;
+    }
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE DESIGN (PANTALLAS MEDIANAS Y MÓVILES)
+       ========================================================================== */
+    @media screen and (max-width: 768px) {
+      body {
+        padding: 10px 6px 30px;
+      }
+
+      .action-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .action-buttons {
+        justify-content: flex-start;
+      }
+
+      .cv-header {
+        padding: 20px 18px 18px;
+      }
+
+      .applicant-name {
+        font-size: 24px;
+      }
+
+      .applicant-title {
+        font-size: 15px;
+      }
+
+      .cv-body {
+        flex-direction: column;
+        padding: 20px 18px 24px;
+        gap: 24px;
+      }
+
+      .side-column {
+        border-left: none;
+        border-top: 2px solid var(--color-border);
+        padding-left: 0;
+        padding-top: 20px;
+      }
+
+      .cv-footer {
+        padding: 12px 18px;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+    }
+
+    /* ==========================================================================
+       ESTILOS DE IMPRESIÓN (PRINT OPTIMIZATION: 1 A 2 PÁGINAS A4 LIMPIAS)
+       ========================================================================== */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 12mm 10mm 12mm;
+      }
+
+      body {
+        background-color: #ffffff !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 10pt !important;
+        line-height: 1.35 !important;
+        color: #000000 !important;
+      }
+
+      .no-print,
+      .action-bar,
+      .print-tip,
+      .modal-overlay,
+      .toast {
+        display: none !important;
+      }
+
+      .cv-container {
+        box-shadow: none !important;
+        border: none !important;
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+
+      .top-accent-bar {
+        height: 4px !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .cv-header {
+        padding: 0 0 12px 0 !important;
+        border-bottom: 1.5pt solid #2c3e50 !important;
+      }
+
+      .applicant-name {
+        font-size: 20pt !important;
+        color: #2c3e50 !important;
+      }
+
+      .applicant-title {
+        font-size: 12pt !important;
+        color: #2980b9 !important;
+        margin-bottom: 6px !important;
+      }
+
+      .header-summary {
+        background: #f8fafc !important;
+        padding: 7px 10px !important;
+        font-size: 9.2pt !important;
+        line-height: 1.4 !important;
+        border-left: 3pt solid #2980b9 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .cv-body {
+        display: flex !important;
+        flex-direction: row !important;
+        padding: 12px 0 0 0 !important;
+        gap: 18px !important;
+      }
+
+      .main-column {
+        flex: 1.9 !important;
+      }
+
+      .side-column {
+        flex: 1.1 !important;
+        padding-left: 16px !important;
+        border-left: 1pt solid #cbd5e1 !important;
+      }
+
+      .section-title {
+        font-size: 11pt !important;
+        color: #2c3e50 !important;
+        border-bottom: 1pt solid #cbd5e1 !important;
+        margin-bottom: 7px !important;
+        padding-bottom: 3px !important;
+        break-after: avoid !important;
+      }
+
+      .job-item,
+      .project-card,
+      .edu-item,
+      .ref-item,
+      .skill-group {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+        margin-bottom: 8px !important;
+      }
+
+      .job-role {
+        font-size: 10pt !important;
+        color: #1a252f !important;
+      }
+
+      .job-period {
+        font-size: 8.5pt !important;
+        background-color: transparent !important;
+        border: 1px solid #cbd5e1 !important;
+        padding: 0 4px !important;
+      }
+
+      .job-company {
+        font-size: 9pt !important;
+      }
+
+      .job-bullets li {
+        font-size: 8.8pt !important;
+        line-height: 1.35 !important;
+        margin-bottom: 2px !important;
+      }
+
+      .project-card {
+        border: 1px solid #e2e8f0 !important;
+        padding: 5px 7px !important;
+        background-color: #ffffff !important;
+      }
+
+      .project-desc {
+        font-size: 8.5pt !important;
+        margin-bottom: 3px !important;
+      }
+
+      .skill-pill {
+        background-color: #f1f5f9 !important;
+        border: 1px solid #cbd5e1 !important;
+        font-size: 8pt !important;
+        padding: 1px 4px !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .contact-item {
+        font-size: 8.8pt !important;
+        margin-bottom: 4px !important;
+      }
+
+      .cv-footer {
+        padding: 8px 0 0 0 !important;
+        border-top: 1pt solid #cbd5e1 !important;
+        font-size: 7.5pt !important;
+      }
+
+      a {
+        text-decoration: none !important;
+        color: #2c3e50 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       BARRA SUPERIOR DE HERRAMIENTAS (PANTALLA)
+       ========================================================================== -->
+  <header class="action-bar no-print">
+    <div class="action-title">
+      <span>●</span> <strong>CV Profesional — Seiji Tsumura</strong>
+      <span class="action-badge-ats">100% ATS Friendly</span>
+    </div>
+
+    <div class="action-buttons">
+      <!-- Conmutador de modo compacto / extendido -->
+      <div class="toggle-group" title="Ajusta el espaciado para 1 página o 2 páginas completas">
+        <button class="toggle-btn" id="btnModeExtended" onclick="setDensity('extended')">Modo Detallado</button>
+        <button class="toggle-btn active" id="btnModeCompact" onclick="setDensity('compact')">Modo Compacto (1 Pág)</button>
+      </div>
+
+      <button class="btn btn-primary" onclick="triggerPrint()" title="Imprimir directamente o guardar en PDF">
+        <span>🖨</span> Imprimir / PDF
+      </button>
+
+      <button class="btn btn-secondary" onclick="openAtsModal()" title="Ver texto optimizado para portales de empleo">
+        <span>📄</span> Texto ATS
+      </button>
+
+      <button class="btn btn-secondary" onclick="copyContactInfo()" title="Copiar datos de contacto al portapapeles">
+        <span>📋</span> Copiar Datos
+      </button>
+    </div>
+  </header>
+
+  <!-- Banner de ayuda de impresión en PDF -->
+  <div class="print-tip no-print" id="printTip">
+    <span>💡 <strong>Consejo para PDF:</strong> En el diálogo de impresión de tu navegador, seleccioná <em>"Guardar como PDF"</em> y verificá que <em>"Gráficos en segundo plano"</em> esté marcado.</span>
+    <button style="background:none; border:none; color:#1e40af; cursor:pointer; font-size:14px; font-weight:bold;" onclick="document.getElementById('printTip').style.display='none'">✕</button>
+  </div>
+
+  <!-- ==========================================================================
+       DOCUMENTO CV (ESTRUCTURA SEMÁNTICA ATS CON MICRODATOS SCHEMA.ORG)
+       ========================================================================== -->
+  <main class="cv-container compact-mode" id="cvContainer" itemscope itemtype="http://schema.org/Person">
+    
+    <!-- Barra decorativa superior -->
+    <div class="top-accent-bar" aria-hidden="true"></div>
+
+    <!-- ENCABEZADO: DATOS PERSONALES Y TITULAR -->
+    <header class="cv-header">
+      <div class="header-top">
+        <div class="header-info">
+          <h1 class="applicant-name" itemprop="name">Seiji Tsumura</h1>
+          <h2 class="applicant-title" itemprop="jobTitle">Analista Programador / Desarrollador de Software</h2>
+          
+          <div class="applicant-meta">
+            <div class="meta-item" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+              <span class="icon">📍</span>
+              <span itemprop="addressLocality">Montevideo</span>, <span itemprop="addressCountry">Uruguay</span>
+            </div>
+            <div class="meta-item">
+              <span class="icon">☎</span>
+              <a href="tel:+59898298339" itemprop="telephone">098 298 339</a>
+            </div>
+            <div class="meta-item">
+              <span class="icon">✉</span>
+              <a href="mailto:seiji42@hotmail.com" itemprop="email">seiji42@hotmail.com</a>
+            </div>
+            <div class="meta-item">
+              <span class="icon">🔗</span>
+              <a href="https://www.linkedin.com/in/seiji-tsumura27a07647/" target="_blank" rel="noopener noreferrer">linkedin.com/in/seiji-tsumura27a07647</a>
+            </div>
+            <div class="meta-item">
+              <span class="icon">💻</span>
+              <a href="https://github.com/seiji142" target="_blank" rel="noopener noreferrer">github.com/seiji142</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PERFIL PROFESIONAL (RESUMEN DIRECTO ATS) -->
+      <section class="header-summary" aria-label="Perfil Profesional">
+        <p itemprop="description">
+          <strong>Perfil Profesional:</strong> Desarrollador con <strong>+10 años de experiencia</strong> creando soluciones técnicas que conectan personas y tecnología. Analista Programador egresado de la <strong>Universidad ORT</strong>, con trayectoria comprobada en desarrollo de sistemas, modernización web, arquitectura de bases de datos relacionales e integración de APIs. Actualmente enfocado e investigando en <strong>inteligencia artificial aplicada, agentes LLM autónomos y automatización</strong>.
+        </p>
+      </section>
+    </header>
+
+    <!-- CUERPO DEL CV EN 2 COLUMNAS -->
+    <div class="cv-body">
+
+      <!-- ======================================================================
+           COLUMNA PRINCIPAL (IZQUIERDA): EXPERIENCIA, PROYECTOS, EDUCACIÓN
+           ====================================================================== -->
+      <section class="main-column" aria-label="Experiencia y Formación Principal">
+        
+        <!-- SECCIÓN 1: EXPERIENCIA LABORAL -->
+        <section class="cv-section" aria-label="Experiencia Laboral">
+          <h2 class="section-title">
+            <span class="title-icon">■</span> Experiencia Laboral
+          </h2>
+
+          <!-- Experiencia 1: Toque y Toque -->
+          <article class="job-item">
+            <div class="job-header">
+              <h3 class="job-role">Desarrollador / Encargado de Sistemas</h3>
+              <span class="job-period">2022 — 2024</span>
+            </div>
+            <div class="job-company">
+              Toque y Toque <span class="company-desc">| Agencia de Viajes</span>
+            </div>
+            <ul class="job-bullets">
+              <li><strong>Diseñó e implementó</strong> soluciones de software a medida para la optimización de procesos comerciales y operativos de la agencia.</li>
+              <li><strong>Mantuvo y optimizó</strong> continuamente el portal web corporativo y la plataforma interna de gestión garantizando alta disponibilidad.</li>
+              <li><strong>Arquitecturó</strong> modelos de datos en MariaDB y gestionó APIs REST en Symfony para la integración de servicios turísticos.</li>
+              <li><strong>Construyó</strong> módulos frontend responsivos y componentes dinámicos con Angular y TypeScript.</li>
+            </ul>
+            <div class="job-tech-stack">
+              <span class="tech-stack-label">Stack:</span>
+              <span class="mini-badge">Angular</span>
+              <span class="mini-badge">Symfony</span>
+              <span class="mini-badge">PHP</span>
+              <span class="mini-badge">MariaDB</span>
+              <span class="mini-badge">APIs REST</span>
+            </div>
+          </article>
+
+          <!-- Experiencia 2: Jefatura de Policía de Montevideo -->
+          <article class="job-item">
+            <div class="job-header">
+              <h3 class="job-role">Desarrollador / Administrativo</h3>
+              <span class="job-period">2011 — 2019</span>
+            </div>
+            <div class="job-company">
+              Jefatura de Policía de Montevideo <span class="company-desc">| Sector Público / Gestión</span>
+            </div>
+            <ul class="job-bullets">
+              <li><strong>Desarrolló y brindó soporte</strong> evolutivo a sistemas informáticos administrativos institucionales de alta demanda.</li>
+              <li><strong>Administró</strong> bases de datos relacionales asegurando la integridad, confidencialidad, indexación y respaldo periódico.</li>
+              <li><strong>Automatizó</strong> flujos y generación de reportes administrativos internos, reduciendo sustancialmente los tiempos de respuesta.</li>
+              <li><strong>Resolvió</strong> incidencias técnicas y ejecutó mantenimiento preventivo de aplicaciones internas en producción.</li>
+            </ul>
+            <div class="job-tech-stack">
+              <span class="tech-stack-label">Stack:</span>
+              <span class="mini-badge">SQL Server</span>
+              <span class="mini-badge">Bases de Datos Relacionales</span>
+              <span class="mini-badge">Sistemas Internos</span>
+            </div>
+          </article>
+
+          <!-- Experiencia 3: Campiglia S.A -->
+          <article class="job-item">
+            <div class="job-header">
+              <h3 class="job-role">Dibujante Técnico</h3>
+              <span class="job-period">2010</span>
+            </div>
+            <div class="job-company">
+              Campiglia S.A <span class="company-desc">| Proyecto para ANTEL Telecomunicaciones</span>
+            </div>
+            <ul class="job-bullets">
+              <li><strong>Ejecutó</strong> el relevamiento técnico y confección de planos de redes de infraestructura de telecomunicaciones para la empresa estatal ANTEL.</li>
+              <li><strong>Verificó</strong> la concordancia de trazas y canalizaciones conforme a estándares de calidad y especificaciones técnicas.</li>
+            </ul>
+          </article>
+
+          <!-- Experiencia 4: De Larrobla y Asociados -->
+          <article class="job-item">
+            <div class="job-header">
+              <h3 class="job-role">Pasante</h3>
+              <span class="job-period">2010</span>
+            </div>
+            <div class="job-company">
+              De Larrobla y Asociados <span class="company-desc">| Software Bancario y Financiero</span>
+            </div>
+            <ul class="job-bullets">
+              <li><strong>Operó</strong> y colaboró en el modelado de aplicaciones empresariales utilizando GeneXus 9.0.</li>
+              <li><strong>Participó</strong> en tareas de testeo de rutinas, verificación de reglas de negocio y soporte a desarrolladores senior.</li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- SECCIÓN 2: PROYECTOS DESTACADOS EN INTELIGENCIA ARTIFICIAL & WEB -->
+        <section class="cv-section" aria-label="Proyectos Destacados">
+          <h2 class="section-title">
+            <span class="title-icon">■</span> Proyectos Destacados
+          </h2>
+
+          <!-- Proyecto 1: ChatBot WhatsApp -->
+          <div class="project-card">
+            <div class="project-title-row">
+              <span class="project-name">1. ChatBot WhatsApp (Agente IA)</span>
+              <a href="https://github.com/seiji142/whatsapp-agent-sin-web" target="_blank" rel="noopener noreferrer" class="project-link">
+                <span>🔗</span> github.com/seiji142/whatsapp-agent-sin-web
+              </a>
+            </div>
+            <p class="project-desc">
+              Agente de WhatsApp con memoria persistente para modelos de IA. Permite mantener contexto continuo y ejecutar acciones autónomas vía mensajería instantánea.
+            </p>
+            <div class="project-tags">
+              <span class="mini-badge">Modelos IA</span>
+              <span class="mini-badge">WhatsApp API</span>
+              <span class="mini-badge">Memoria Persistente</span>
+            </div>
+          </div>
+
+          <!-- Proyecto 2: Brain AI -->
+          <div class="project-card">
+            <div class="project-title-row">
+              <span class="project-name">2. Brain AI - Memoria Persistente</span>
+              <a href="https://github.com/seiji142/brain-ai-01" target="_blank" rel="noopener noreferrer" class="project-link">
+                <span>🔗</span> github.com/seiji142/brain-ai-01
+              </a>
+            </div>
+            <p class="project-desc">
+              Sistema de arquitectura de memoria a largo plazo y retención de contexto para agentes y modelos de inteligencia artificial.
+            </p>
+            <div class="project-tags">
+              <span class="mini-badge">Arquitectura IA</span>
+              <span class="mini-badge">Vector Context</span>
+              <span class="mini-badge">LLM Memory</span>
+            </div>
+          </div>
+
+          <!-- Proyecto 3: Personalizar Comportamiento IA -->
+          <div class="project-card">
+            <div class="project-title-row">
+              <span class="project-name">3. Personalizar Comportamiento IA</span>
+              <a href="https://github.com/seiji142/personalizar-comportamiento-01" target="_blank" rel="noopener noreferrer" class="project-link">
+                <span>🔗</span> github.com/seiji142/personalizar-comportamiento-01
+              </a>
+            </div>
+            <p class="project-desc">
+              Framework para configurar y refinar dinámicamente el comportamiento de modelos de IA en el entorno OpenCode.
+            </p>
+            <div class="project-tags">
+              <span class="mini-badge">OpenCode</span>
+              <span class="mini-badge">Prompting</span>
+              <span class="mini-badge">Automatización</span>
+            </div>
+          </div>
+
+          <!-- Proyecto 4: Portfolio Web con Chatbot -->
+          <div class="project-card">
+            <div class="project-title-row">
+              <span class="project-name">4. Portfolio Web con Chatbot</span>
+              <span class="project-link" style="color: var(--color-secondary);">Web App Interactiva</span>
+            </div>
+            <p class="project-desc">
+              Sitio web profesional con asistente virtual conversacional integrado para consulta interactiva de proyectos y trayectoria.
+            </p>
+            <div class="project-tags">
+              <span class="mini-badge">React</span>
+              <span class="mini-badge">TypeScript</span>
+              <span class="mini-badge">Tailwind CSS</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECCIÓN 3: EDUCACIÓN Y FORMACIÓN -->
+        <section class="cv-section" aria-label="Educación y Formación Académica">
+          <h2 class="section-title">
+            <span class="title-icon">■</span> Educación & Certificaciones
+          </h2>
+
+          <div class="edu-item">
+            <div class="edu-header">
+              <span class="edu-degree">Analista Programador</span>
+              <span class="edu-year">2015 — 2020</span>
+            </div>
+            <div class="edu-institution">Universidad ORT Uruguay</div>
+            <div class="edu-note">★ Promedio materias aprobadas: 80%</div>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-header">
+              <span class="edu-degree">Python for Data Science</span>
+              <span class="edu-year">2022</span>
+            </div>
+            <div class="edu-institution">IBM</div>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-header">
+              <span class="edu-degree">Programador Java</span>
+              <span class="edu-year">2013</span>
+            </div>
+            <div class="edu-institution">Instituto BIOS</div>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-header">
+              <span class="edu-degree">Analista Programador GeneXus 9.0</span>
+              <span class="edu-year">2010</span>
+            </div>
+            <div class="edu-institution">Centro Educativo Los Pinos</div>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-header">
+              <span class="edu-degree">Diseño de Páginas Web</span>
+              <span class="edu-year">2010</span>
+            </div>
+            <div class="edu-institution">Instituto BIOS</div>
+          </div>
+        </section>
+
+      </section>
+
+      <!-- ======================================================================
+           COLUMNA LATERAL (DERECHA): CONTACTO, TECNOLOGÍAS, HABILIDADES, REFERENCIAS
+           ====================================================================== -->
+      <aside class="side-column" aria-label="Información de Contacto y Competencias">
+
+        <!-- CONTACTO DETALLADO -->
+        <section class="cv-section" aria-label="Contacto Directo">
+          <h2 class="section-title">
+            <span class="title-icon">●</span> Contacto
+          </h2>
+          <ul class="contact-list">
+            <li class="contact-item">
+              <span class="icon">📍</span>
+              <div>
+                <strong>Ubicación</strong>
+                Montevideo, Uruguay
+              </div>
+            </li>
+            <li class="contact-item">
+              <span class="icon">☎</span>
+              <div>
+                <strong>Teléfono</strong>
+                <a href="tel:+59898298339">098 298 339</a>
+              </div>
+            </li>
+            <li class="contact-item">
+              <span class="icon">✉</span>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:seiji42@hotmail.com">seiji42@hotmail.com</a>
+              </div>
+            </li>
+            <li class="contact-item">
+              <span class="icon">💼</span>
+              <div>
+                <strong>LinkedIn</strong>
+                <a href="https://www.linkedin.com/in/seiji-tsumura27a07647/" target="_blank" rel="noopener noreferrer">seiji-tsumura27a07647</a>
+              </div>
+            </li>
+            <li class="contact-item">
+              <span class="icon">🐙</span>
+              <div>
+                <strong>GitHub</strong>
+                <a href="https://github.com/seiji142" target="_blank" rel="noopener noreferrer">github.com/seiji142</a>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- HABILIDADES TÉCNICAS (KEYWORDS ATS) -->
+        <section class="cv-section" aria-label="Habilidades Técnicas">
+          <h2 class="section-title">
+            <span class="title-icon">●</span> Tecnologías
+          </h2>
+
+          <div class="skill-group">
+            <div class="skill-group-name"><span class="bullet">▶</span> Frontend</div>
+            <div class="skill-pills">
+              <span class="skill-pill highlight">Angular</span>
+              <span class="skill-pill highlight">TypeScript</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">HTML5</span>
+              <span class="skill-pill">CSS3</span>
+              <span class="skill-pill">Tailwind CSS</span>
+              <span class="skill-pill">React</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-name"><span class="bullet">▶</span> Backend</div>
+            <div class="skill-pills">
+              <span class="skill-pill highlight">PHP</span>
+              <span class="skill-pill highlight">Symfony</span>
+              <span class="skill-pill highlight">Python</span>
+              <span class="skill-pill">Java</span>
+              <span class="skill-pill">Spring Boot</span>
+              <span class="skill-pill">C#</span>
+              <span class="skill-pill">.NET</span>
+              <span class="skill-pill">APIs REST</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-name"><span class="bullet">▶</span> Bases de Datos</div>
+            <div class="skill-pills">
+              <span class="skill-pill highlight">MariaDB</span>
+              <span class="skill-pill highlight">SQL Server</span>
+              <span class="skill-pill">MySQL</span>
+              <span class="skill-pill">Consultas SQL</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-name"><span class="bullet">▶</span> Herramientas & DevOps</div>
+            <div class="skill-pills">
+              <span class="skill-pill">Git</span>
+              <span class="skill-pill">GitHub</span>
+              <span class="skill-pill">Docker</span>
+              <span class="skill-pill">Linux</span>
+              <span class="skill-pill">VS Code</span>
+              <span class="skill-pill">GeneXus 9.0</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-name"><span class="bullet">▶</span> Inteligencia Artificial</div>
+            <div class="skill-pills">
+              <span class="skill-pill highlight">Modelos de IA / LLMs</span>
+              <span class="skill-pill highlight">Agentes WhatsApp</span>
+              <span class="skill-pill">Memoria Persistente</span>
+              <span class="skill-pill">Automatización</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- HABILIDADES BLANDAS -->
+        <section class="cv-section" aria-label="Competencias Personales">
+          <h2 class="section-title">
+            <span class="title-icon">●</span> Habilidades Blandas
+          </h2>
+          <div class="soft-skills-grid">
+            <div class="soft-skill-item"><span class="star">★</span> Toma de decisiones</div>
+            <div class="soft-skill-item"><span class="star">★</span> Proactividad & Iniciativa</div>
+            <div class="soft-skill-item"><span class="star">★</span> Trabajo en equipo</div>
+            <div class="soft-skill-item"><span class="star">★</span> Resolución de problemas</div>
+            <div class="soft-skill-item"><span class="star">★</span> Adaptabilidad</div>
+            <div class="soft-skill-item"><span class="star">★</span> Versatilidad</div>
+            <div class="soft-skill-item"><span class="star">★</span> Autodidacta</div>
+          </div>
+        </section>
+
+        <!-- IDIOMAS -->
+        <section class="cv-section" aria-label="Idiomas">
+          <h2 class="section-title">
+            <span class="title-icon">●</span> Idiomas
+          </h2>
+          <div class="lang-item">
+            <span class="lang-name">Español</span>
+            <span class="lang-level">Nativo</span>
+          </div>
+          <div class="lang-item">
+            <span class="lang-name">Inglés</span>
+            <span class="lang-level">Intermedio</span>
+          </div>
+        </section>
+
+        <!-- REFERENCIAS LABORALES -->
+        <section class="cv-section" aria-label="Referencias Laborales">
+          <h2 class="section-title">
+            <span class="title-icon">●</span> Referencias
+          </h2>
+
+          <div class="ref-item">
+            <div class="ref-name">Arq. Gabriel Enseñat</div>
+            <div class="ref-role">Encargado de Proyecto | LKSur s.a</div>
+            <div class="ref-phone">
+              <span>☎</span> <a href="tel:094343434">094 343 434</a>
+            </div>
+          </div>
+
+          <div class="ref-item">
+            <div class="ref-name">A.P. Richard Pías</div>
+            <div class="ref-role">Analista | Ministerio del Interior</div>
+            <div class="ref-phone">
+              <span>☎</span> <a href="tel:098371327">098 371 327</a>
+            </div>
+          </div>
+
+          <div class="ref-item">
+            <div class="ref-name">Ing. Pablo Volpi</div>
+            <div class="ref-role">Docente | Universidad ORT</div>
+            <div class="ref-phone">
+              <span>☎</span> <a href="tel:097074570">097 074 570</a>
+            </div>
+          </div>
+        </section>
+
+      </aside>
+
+    </div>
+
+    <!-- PIE DEL CV -->
+    <footer class="cv-footer">
+      <div>
+        <span>Seiji Tsumura — Analista Programador</span>
+      </div>
+      <div class="ats-verified-tag">
+        <span>✔</span> Formato Optimizado para ATS & Selección IT
+      </div>
+      <div>
+        <span>Montevideo, Uruguay</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ==========================================================================
+       MODAL: COPIAR CV EN FORMATO TEXTO PLANO ATS
+       ========================================================================== -->
+  <div class="modal-overlay" id="atsModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Texto Plano ATS (Listo para Portales de Empleo)</h3>
+        <button class="modal-close" onclick="closeAtsModal()" aria-label="Cerrar modal">×</button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom: 8px; color: var(--color-secondary); font-size: 12px;">
+          Texto plano sin formatos gráficos. Copialo directamente para enviarlo en portales como Workday, Taleo, Greenhouse o LinkedIn:
+        </p>
+        <textarea class="ats-textarea" id="atsRawText" readonly></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeAtsModal()">Cerrar</button>
+        <button class="btn btn-primary" onclick="copyAtsText()">Copiar Todo el Texto</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTIFICACIÓN FLOTANTE (TOAST) -->
+  <div class="toast" id="toastMessage">
+    <span>✔</span> <span id="toastText">Información copiada al portapapeles</span>
+  </div>
+
+  <!-- ==========================================================================
+       SCRIPTS DE INTERACTIVIDAD
+       ========================================================================== -->
+  <script>
+    // Texto plano optimizado para portales ATS
+    const rawAtsContent = `SEIJI TSUMURA
+Analista Programador / Desarrollador
+Montevideo, Uruguay | Tel: 098 298 339 | Email: seiji42@hotmail.com
+LinkedIn: https://www.linkedin.com/in/seiji-tsumura27a07647/
+GitHub: https://github.com/seiji142
+
+==================================================
+PERFIL PROFESIONAL
+==================================================
+Desarrollador con +10 años de experiencia creando soluciones que conectan personas y tecnología. Analista Programador egresado de la Universidad ORT con experiencia en desarrollo de sistemas, mantenimiento de sitios web y gestión de bases de datos. Actualmente enfocado en inteligencia artificial y automatización.
+
+==================================================
+EXPERIENCIA LABORAL
+==================================================
+
+1. Desarrollador / Encargado de Sistemas
+Toque y Toque (Agencia de viajes) | 2022 — 2024
+- Diseñó e implementó soluciones a medida para la gestión operativa y comercial.
+- Mantenimiento y optimización de sitio web y sistema interno con alta disponibilidad.
+- Gestión de base de datos MariaDB y desarrollo/consumo de APIs en Symfony.
+- Tecnologías: Angular, MariaDB, Symfony, PHP, APIs REST.
+
+2. Desarrollador / Administrativo
+Jefatura de Policía de Montevideo | 2011 — 2019
+- Desarrollo y mantenimiento continuo de sistemas informáticos administrativos.
+- Administración de bases de datos relacionales asegurando integridad y respaldo.
+- Automatización de procesos administrativos internos reduciendo tiempos operativos.
+- Tecnologías: SQL Server, Bases de Datos Relacionales, Sistemas Internos.
+
+3. Dibujante Técnico
+Campiglia S.A | 2010
+- Relevamiento técnico y dibujo de redes de telecomunicaciones para la empresa ANTEL.
+
+4. Pasante
+De Larrobla y Asociados | 2010
+- Manejo, pruebas y parametrización de software empresarial con GeneXus 9.0.
+
+==================================================
+PROYECTOS DESTACADOS
+==================================================
+1. ChatBot WhatsApp
+Agente de WhatsApp con memoria persistente para modelos de IA.
+GitHub: https://github.com/seiji142/whatsapp-agent-sin-web
+
+2. Brain AI - Memoria Persistente
+Sistema de memoria persistente para modelos de IA.
+GitHub: https://github.com/seiji142/brain-ai-01
+
+3. Personalizar Comportamiento IA
+Framework para personalizar el comportamiento de modelos de IA en OpenCode.
+GitHub: https://github.com/seiji142/personalizar-comportamiento-01
+
+4. Portfolio Web con Chatbot
+Sitio web personal con asistente virtual integrado (React, TypeScript, Tailwind CSS).
+
+==================================================
+EDUCACIÓN
+==================================================
+- Analista Programador — Universidad ORT (2015 — 2020) | Promedio materias aprobadas: 80%
+- Python for Data Science — IBM (2022)
+- Programador Java — Instituto BIOS (2013)
+- Analista Programador GeneXus 9.0 — Centro Educativo Los Pinos (2010)
+- Diseño de Páginas Web — Instituto BIOS (2010)
+
+==================================================
+TECNOLOGÍAS
+==================================================
+- Frontend: Angular, HTML5, CSS, JavaScript, TypeScript, Tailwind CSS, React
+- Backend: PHP, Symfony, Python, Java, Spring Boot, C#, .NET, APIs REST
+- Bases de Datos: SQL Server, MySQL, MariaDB
+- Herramientas: Git, GitHub, VS Code, Docker, Linux, GeneXus
+- Inteligencia Artificial: Modelos de IA / LLMs, Agentes WhatsApp, Memoria Persistente, Prompt Engineering
+
+==================================================
+HABILIDADES BLANDAS
+==================================================
+Toma de decisiones, Proactividad, Trabajo en equipo, Resolución de problemas, Adaptabilidad, Iniciativa, Versatilidad, Autodidacta.
+
+==================================================
+IDIOMAS
+==================================================
+- Español: Nativo
+- Inglés: Intermedio
+
+==================================================
+REFERENCIAS
+==================================================
+- Arquitecto Gabriel Enseñat - Encargado de Proyecto LKSur s.a - Tel: 094343434
+- Analista Programador Richard Pías - Analista en Ministerio del Interior - Tel: 098371327
+- Ingeniero en Sistemas Pablo Volpi - Docente en Universidad ORT - Tel: 097074570
+`;
+
+    // Función para mostrar feedback visual tipo Toast
+    function showToast(message) {
+      const toast = document.getElementById('toastMessage');
+      const textSpan = document.getElementById('toastText');
+      textSpan.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // Modal de texto ATS
+    function openAtsModal() {
+      const modal = document.getElementById('atsModal');
+      const textarea = document.getElementById('atsRawText');
+      textarea.value = rawAtsContent.trim();
+      modal.classList.add('active');
+    }
+
+    function closeAtsModal() {
+      const modal = document.getElementById('atsModal');
+      modal.classList.remove('active');
+    }
+
+    function copyAtsText() {
+      const textarea = document.getElementById('atsRawText');
+      textarea.select();
+      navigator.clipboard.writeText(textarea.value).then(() => {
+        showToast('Texto plano ATS copiado con éxito');
+        closeAtsModal();
+      }).catch(() => {
+        document.execCommand('copy');
+        showToast('Texto copiado');
+        closeAtsModal();
+      });
+    }
+
+    // Copiar información de contacto rápida
+    function copyContactInfo() {
+      const contactSummary = `Seiji Tsumura - Analista Programador / Desarrollador
+Teléfono: 098 298 339
+Email: seiji42@hotmail.com
+LinkedIn: https://www.linkedin.com/in/seiji-tsumura27a07647/
+GitHub: https://github.com/seiji142
+Montevideo, Uruguay`;
+      
+      navigator.clipboard.writeText(contactSummary).then(() => {
+        showToast('Datos de contacto copiados al portapapeles');
+      }).catch(() => {
+        showToast('Datos copiados');
+      });
+    }
+
+    // Conmutador de densidad de espaciado (1 página o 2 páginas)
+    function setDensity(mode) {
+      const container = document.getElementById('cvContainer');
+      const btnCompact = document.getElementById('btnModeCompact');
+      const btnExtended = document.getElementById('btnModeExtended');
+
+      if (mode === 'compact') {
+        container.classList.add('compact-mode');
+        btnCompact.classList.add('active');
+        btnExtended.classList.remove('active');
+        showToast('Modo Compacto activado (Ajuste 1 página)');
+      } else {
+        container.classList.remove('compact-mode');
+        btnExtended.classList.add('active');
+        btnCompact.classList.remove('active');
+        showToast('Modo Detallado activado (Espaciado extendido)');
+      }
+    }
+
+    // Disparador de impresión con preparación previa
+    function triggerPrint() {
+      window.print();
+    }
+
+    // Escuchar atajo Esc para cerrar el modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeAtsModal();
+    });
+
+    // Cierre al cliquear el fondo oscuro del modal
+    document.getElementById('atsModal').addEventListener('click', (e) => {
+      if (e.target.id === 'atsModal') closeAtsModal();
+    });
+  </script>
+</body>
+</html>
