@@ -108,6 +108,11 @@ Ultima actualizacion: 20/09/2026
 ### Documentación
 - [x] Actualizar README.md raíz con información completa del proyecto
 
+### Despliegue
+- [x] Crear repositorio en GitHub: https://github.com/seiji142/portfolio.git
+- [x] Configurar remote SSH y subir código
+- [x] Cambiar bash permission a "allow" en opencode.json
+
 ---
 
 ## Flujo de Trabajo
