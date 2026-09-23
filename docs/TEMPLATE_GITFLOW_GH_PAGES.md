@@ -44,10 +44,18 @@ git push -u origin develop       # tracking
 En GitHub → Settings → Branches → **Add classic branch protection rule**:
 - Branch name pattern: `main`
 - Marcar **"Require a pull request before merging"**
+- **NO marcar "Require approvals"** (ver advertencia abajo)
 - Create
 
 Consecuencia: con proteccion activa no hay push directo a `main`; publicar =
-PR desde `develop` (manual en GitHub o con `gh` autenticado).
+PR desde `develop`, sin necesidad de review.
+
+> **ADVERTENCIA (leccion real):** en un repositorio 100% personal, **el autor de
+> un PR no puede aprobar su propio PR** ("Los autores de las solicitudes de
+> extracción no pueden aprobar sus propias solicitudes de extracción"). Si marcas
+> "Require approvals", no habra nadie con acceso `write` para aprobar y el PR
+> queda bloqueado permanentemente. Por eso: **PR obligatorio SIN Require
+> approvals**. Solo marcar approvals si hay colaboradores con acceso `write`.
 
 ### Fase 4 — Verificacion final
 ```bash
@@ -128,6 +136,18 @@ GitHub → repositorio → Settings → Pages → Source: **GitHub Actions**.
 (Se puede activar antes o despues del primer push; hasta entonces no se publica.)
 El push/merge a `main` dispara el build + deploy automatico.
 
+> **Error tipico (leccion real):** si el workflow corre con Pages deshabilitado
+> (o en modo "Deploy from a branch"), el job `deploy` falla con
+> `Get Pages site failed... Not Found`. Solucion:
+> 1. Confirmar Settings → Pages → Source: **GitHub Actions** (no "Deploy from a branch").
+> 2. En Actions → "Deploy to GitHub Pages" → **Re-run all jobs**.
+> 3. Si persiste, forzar el enablement programatico en el workflow:
+>    ```yaml
+>    - uses: actions/configure-pages@v5
+>      with:
+>        enablement: true
+>    ```
+
 ### 3.4 Resultado
 Sitio publicado en `https://<usuario>.github.io/<repo>/`. El deploy se
 regenera con cada push o merge a `main`.
@@ -180,6 +200,39 @@ regenera con cada push o merge a `main`.
 - Para diagnosticar: probar el protocolo directamente (initialize →
   notifications/initialized → tools/list) en vez de confiar en la UI.
 
+### 4.3 Leccion real: rutas relativas vs heuristica de emoji
+
+**Sintoma:** las cards de proyectos mostradas como texto gigante en vez de
+imagen (ej. aparecia `images/projects/portfolio-web.png` como "emoji").
+
+**Causa:** la heuristica consideraba "imagen" solo si la ruta empezaba con `/`
+o `http`. Con rutas RELATIVAS (`images/...`, sin `/` inicial) la clasificaba
+como emoji.
+
+```ts
+// ANTES (roto con rutas relativas)
+function isEmoji(str?: string) {
+  return !!str && !str.startsWith("http") && !str.startsWith("/");
+}
+```
+
+**Fix probado:** detectar separadores de ruta y extension de imagen.
+
+```ts
+const IMAGE_EXT = /\.(png|jpe?g|gif|webp|svg|avif|bmp|ico)$/i;
+
+function isEmoji(str?: string) {
+  return !!str && !/[\/\\]/.test(str) && !IMAGE_EXT.test(str);
+}
+```
+
+Cubre: rutas relativas (`images/...`), absolutas (`/...`) y URLs (`http...`)
+→ imagen; emojis planos → emoji.
+
+> Regla general: si el codigo distingue entre URL/emoji usando
+> `startsWith("/")` o `startsWith("http")`, revisalo al migrar a rutas
+> relativas.
+
 ## 5. Archivos `.ai/`
 | Archivo | Contenido minimo |
 |---------|------------------|
@@ -202,10 +255,11 @@ git merge feature/<desc>
 
 ## 7. Checklist de verificacion
 - [ ] `develop` creada y subida con tracking (`origin/develop`).
-- [ ] `main` con branch protection (require PR).
+- [ ] `main` con branch protection (require PR, SIN require approvals).
 - [ ] `on: push branches: [main]` en el workflow Pages.
 - [ ] Base relativa (`base: "./"`) y rutas relativas en data/assets.
 - [ ] `npm run build` exitoso y sin rutas absolutas (`/img`, `/cv-`) en el dist.
+- [ ] Heuristica de emoji compatible con rutas relativas (cards de proyectos muestran imagenes).
 - [ ] Settings → Pages → Source: **GitHub Actions**.
 - [ ] Sitio visible en `https://<usuario>.github.io/<repo>/`.
 - [ ] Flujo documentado en `.ai/context.md` y memoria persistente.
