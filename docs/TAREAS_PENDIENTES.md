@@ -1,5 +1,5 @@
 # Tareas Pendientes - Portfolio AI Chat
-Ultima actualizacion: 20/09/2026
+Ultima actualizacion: 23/09/2026
 
 ---
 
@@ -14,7 +14,7 @@ Ultima actualizacion: 20/09/2026
 - [x] Actualizar github con usuario real → https://github.com/seiji142
 - [x] LinkedIn oculto por ahora
 - [x] Twitter no aplica
-- [x] Website es esta página, pendiente de subir a hosting
+- [x] Website publicado en GitHub Pages → https://seiji142.github.io/portfolio/ (deploy automatico al merge a main, 23/09/2026)
 
 ### 3. Textos personales
 - [x] Personalizar tagline en portfolio.ts (linea 14-15)
@@ -116,6 +116,18 @@ Ultima actualizacion: 20/09/2026
 - [x] Crear repositorio en GitHub: https://github.com/seiji142/portfolio.git
 - [x] Configurar remote SSH y subir código
 - [x] Cambiar bash permission a "allow" en opencode.json
+
+---
+
+## COMPLETADO 23/09/2026 — Deploy GitHub Pages
+
+- [x] Workflow CI creado (`.github/workflows/deploy.yml`): build + publish en push a `main`.
+- [x] Rutas relativas en `portfolio.ts` (imagenes, CV) + `base: "./"` en `vite.config.ts` (soporte subruta `/portfolio/`).
+- [x] Fix cards de proyectos: `isEmoji` en `Projects.tsx` detecta rutas relativas (antes las mostraba como texto).
+- [x] Sitio publicado y verificado: https://seiji142.github.io/portfolio/ (200, CV e imagenes OK).
+- [x] Flujo Git: ramas `main` (produccion, PR sin approvals) + `develop` (desarrollo) + `feature/*`.
+- [x] Proteccion de `main`: require PR sin "Require approvals" (repo personal: el autor no puede auto-aprobarse).
+- [x] Template reutilizable con lecciones reales: `docs/TEMPLATE_GITFLOW_GH_PAGES.md`.
 
 ---
 
