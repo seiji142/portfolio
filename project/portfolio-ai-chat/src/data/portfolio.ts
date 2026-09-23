@@ -16,8 +16,8 @@ export const profile = {
   // Descripción larga para la sección "Sobre mí"
   sobreMi:
     "Soy Seiji Tsumura, Analista Programador egresado de la Universidad ORT con más de 10 años de experiencia en desarrollo de sistemas. Trabajé 5 años en la Jefatura de Policía de Montevideo y 2 años como encargado de sistemas en Toque y Toque. Actualmente desarrollo proyectos propios enfocados en inteligencia artificial y automatización. Me gusta aprender cosas nuevas y transformar ideas en productos funcionales.",
-  fotoUrl: "/images/you26.jpg", // opcional: pon una URL o deja "" para usar iniciales
-  cvUrl: "/cv-seiji-tsumura.html", // enlace a tu CV en HTML
+  fotoUrl: "images/you26.jpg", // opcional: pon una URL o deja "" para usar iniciales
+  cvUrl: "cv-seiji-tsumura.html", // enlace a tu CV en HTML
 };
 
 export const social = {
@@ -33,7 +33,7 @@ export const social = {
 // ============================================================
 export const assistant = {
   nombre: "Lewinsky", // el nombre de tu asistente virtual
-  avatarUrl: "/images/assistant-mony-01.jpg",
+  avatarUrl: "images/assistant-mony-01.jpg",
   mensajeBienvenida:
     "¡Hola! 👋 Soy Lewinsky, la asistente virtual de {nombre}. Te puedo ayudar con informacion sobre su experiencia, proyectos, CV o contacto. ¿Que te interesa conocer?",
   sugerencias: [
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     descripcion:
       "Agente de WhatsApp con memoria persistente para modelos de IA. Permite mantener conversaciones contextuales a través de WhatsApp.",
     tags: ["Python", "AI", "WhatsApp"],
-    imagen: "/images/projects/chatbot-whatsapp.png",
+    imagen: "images/projects/chatbot-whatsapp.png",
     codigo: "https://github.com/seiji142/whatsapp-agent-sin-web",
     destacado: true,
   },
@@ -102,7 +102,7 @@ export const projects: Project[] = [
     descripcion:
       "Sistema de memoria persistente para modelos de IA. Permite que los modelos recuerden conversaciones y decisiones anteriores.",
     tags: ["Python", "AI", "Memory"],
-    imagen: "/images/projects/brain-ai.png",
+    imagen: "images/projects/brain-ai.png",
     codigo: "https://github.com/seiji142/brain-ai-01",
     destacado: true,
   },
@@ -111,7 +111,7 @@ export const projects: Project[] = [
     descripcion:
       "Framework para personalizar el comportamiento de modelos de IA en OpenCode. Define reglas, contexto y personalidad para asistentes virtuales.",
     tags: ["Python", "AI", "Framework"],
-    imagen: "/images/projects/personalizar-ia.png",
+    imagen: "images/projects/personalizar-ia.png",
     codigo: "https://github.com/seiji142/personalizar-comportamiento-01",
   },
   {
@@ -119,7 +119,7 @@ export const projects: Project[] = [
     descripcion:
       "Sitio web personal con asistente virtual integrado. Desarrollado con React, TypeScript y Tailwind CSS.",
     tags: ["React", "TypeScript", "Tailwind"],
-    imagen: "/images/projects/portfolio-web.png",
+    imagen: "images/projects/portfolio-web.png",
   },
 ];
 
