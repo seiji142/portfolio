@@ -35,13 +35,12 @@ export const assistant = {
   nombre: "Lewinsky", // el nombre de tu asistente virtual
   avatarUrl: "/images/assistant-mony-01.jpg",
   mensajeBienvenida:
-    "¡Hola! 👋 Soy Lewinsky, la asistente virtual de {nombre}. Puedo contarte sobre su experiencia, proyectos, habilidades o cómo contactarlo. ¿Qué te gustaría saber?",
+    "¡Hola! 👋 Soy Lewinsky, la asistente virtual de {nombre}. Te puedo ayudar con informacion sobre su experiencia, proyectos, CV o contacto. ¿Que te interesa conocer?",
   sugerencias: [
     "¿Qué experiencia tiene?",
     "Cuéntame sobre sus proyectos",
-    "¿Qué tecnologías domina?",
-    "¿Cómo puedo contactarlo?",
-    "¿Está disponible para trabajar?",
+    "¿Cómo lo contacto?",
+    "Ver CV",
   ],
 };
 

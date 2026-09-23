@@ -45,15 +45,19 @@ Ultima actualizacion: 20/09/2026
 
 ## BAJO
 
-### 7. Asistente virtual
-- [ ] Verificar nombre "Lewinsky" o cambiar si se desea
-- [ ] Personalizar mensaje de bienvenida si es necesario
-- [ ] Revisar sugerencias del chatbot
+### 7. Asistente virtual — Plan Opcion B (20/09/2026)
+- [x] Decision nombre: mantener "Lewinsky" (femenino, coincide con "la asistente" en chatEngine.ts)
+- [x] Personalizar mensajeBienvenida en `portfolio.ts:37-38` — tono amable equilibrado, 1 emoji max, mantener `{nombre}`
+- [x] Optimizar sugerencias en `portfolio.ts:39-45` a 4 clave: `¿Qué experiencia tiene?` / `Cuéntame sobre sus proyectos` / `¿Cómo lo contacto?` / `Ver CV`
+- [x] Verificacion: `npm run build` OK (dist/index.html 254 kB, gzip 75.4 kB, 20/09/2026)
 
 ### 8. Configuracion tecnica
-- [ ] Verificar que el build funciona correctamente (npm run build)
-- [ ] Probar en diferentes tamanos de pantalla (responsiveness)
-- [ ] Verificar accesibilidad basica
+- [x] Verificar que el build funciona correctamente (npm run build)
+- [x] Probar en diferentes tamanos de pantalla (responsiveness)
+- [x] Verificar accesibilidad basica
+- Build verificado: dist/index.html 254.27 kB, gzip 75.47 kB, returncode 0 (20/09/2026)
+- Responsive: Navbar mobile/desktop, Hero grid, Projects 2-col, Skills 3-col, ChatBot adaptado
+- Accesibilidad: lang="es", aria-labels, aria-hidden en emojis, progressbar con aria-valuenow
 
 ### 9. UI / Visual
 - [ ] Decidir si reactivar íconos de redes sociales en Hero (comentado en Hero.tsx:68-89)
@@ -121,3 +125,29 @@ Ultima actualizacion: 20/09/2026
 2. Se actualizan los campos en portfolio.ts
 3. Se verifica que el sitio funcione correctamente
 4. Se marca como completada en el checklist
+
+---
+
+## PROPUESTA — Diferenciar run_tests vs run_command (20/09/2026, implementada)
+
+### Decisiones
+- Dos tools separadas (no unificar con `kind`).
+- Generica = `run_command` / `command_status`.
+- Opcion B: endpoints alias diferentes que comparten el mismo `_runner`.
+- `run_tests` solo tests, con solo advertencia (no bloqueo) si el comando no parece test.
+
+### Cambios aplicados
+1. [x] `brain-ai-01/ai_architect/core/mcp_server.py` — agregados `POST /commands/run`, `GET /commands/status/{id}`, `GET /commands/list` delegando al mismo `_runner`.
+2. [x] `brain-ai-01/mcp_bridge.py` — agregadas tools `run_command`/`command_status` + handlers; `run_tests` con heuristica warn-only; docstring actualizado.
+3. [x] Docs — tabla de tools actualizada en `portfolio/.ai/MEMORY.md`.
+4. [x] Servidor reiniciado y verificado end-to-end.
+5. [x] Sesion MCP recargada: sesion nueva ve las 10 tools (ep_feec58d9).
+
+### Verificacion (20/09/2026)
+- [x] `py_compile` OK en ambos archivos.
+- [x] Rutas FastAPI: `/commands/run`, `/commands/status/{id}`, `/commands/list` + `/tests/*` presentes.
+- [x] Bridge: 10 tools y 10 handlers registrados.
+- [x] Heuristica: `pytest`/`npm test`/`go test` → True; `npm run build`/`lint`/`echo ok` → False (warning).
+- [x] Servidor reiniciado (auto-start del bridge tras `Stop-Process -Id 1820`; intento manual con `Start-Process` murio por Job Object — usar auto-start o `pythonw`).
+- [x] End-to-end `POST /commands/run` (`echo ok`) → `done`, stdout `ok`, returncode 0.
+- [x] End-to-end MCP en sesion nueva: `run_command("echo ok")` → `done` stdout `ok` rc 0; `run_tests("npm run build")` → warning confirmado (ep_feec58d9). Propuesta CERRADA.

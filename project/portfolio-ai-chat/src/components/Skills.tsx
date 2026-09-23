@@ -20,7 +20,14 @@ export default function Skills() {
                     <span className="text-slate-300">{s.nombre}</span>
                     <span className="text-slate-500">{s.nivel}%</span>
                   </div>
-                  <div className="h-2 w-full overflow-hidden rounded-full bg-white/10">
+                  <div
+                    className="h-2 w-full overflow-hidden rounded-full bg-white/10"
+                    role="progressbar"
+                    aria-valuenow={s.nivel}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
+                    aria-label={`${s.nombre} ${s.nivel}%`}
+                  >
                     <div
                       className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500"
                       style={{ width: `${s.nivel}%` }}

@@ -45,6 +45,8 @@ Parámetros:
 | Error recurrente | `brain-ai_memory_save` | Guardar solución de error |
 | Antes de cambiar configuración | `brain-ai_memory_search` | Buscar si ya se intentó |
 | Periódicamente | `brain-ai_memory_consolidate` | Consolidar episodios similares |
+| Ejecutar solo tests | `brain-ai_run_tests` + `brain-ai_test_status` | "pytest tests/ -v" (si no parece test, devuelve advertencia) |
+| Verificar build / comandos consola | `brain-ai_run_command` + `brain-ai_command_status` | "npm run build" (NO usar run_tests para esto) |
 
 ## Cuándo guardar en memoria (AUTO)
 DESPUÉS de cada sesión exitosa, DEBES usar la herramienta `brain-ai_memory_save`:

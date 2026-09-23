@@ -14,7 +14,7 @@ export default function About() {
         <p className="text-lg leading-relaxed text-slate-400">
           {profile.sobreMi}
         </p>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {stats.map((s) => (
             <div
               key={s.label}

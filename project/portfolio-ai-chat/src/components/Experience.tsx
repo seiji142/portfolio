@@ -12,7 +12,7 @@ export default function Experience() {
                 item.tipo === "trabajo" ? "bg-indigo-500" : "bg-fuchsia-500"
               }`}
             >
-              <span className="text-xs">
+              <span className="text-xs" aria-hidden="true">
                 {item.tipo === "trabajo" ? "💼" : "🎓"}
               </span>
             </span>
