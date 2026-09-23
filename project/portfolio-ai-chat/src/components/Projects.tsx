@@ -1,8 +1,10 @@
 import Section from "./Section";
 import { projects } from "../data/portfolio";
 
+const IMAGE_EXT = /\.(png|jpe?g|gif|webp|svg|avif|bmp|ico)$/i;
+
 function isEmoji(str?: string) {
-  return !!str && !str.startsWith("http") && !str.startsWith("/");
+  return !!str && !/[\/\\]/.test(str) && !IMAGE_EXT.test(str);
 }
 
 export default function Projects() {
