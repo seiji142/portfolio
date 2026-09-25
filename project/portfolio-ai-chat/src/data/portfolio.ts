@@ -61,7 +61,7 @@ export const skillGroups: { categoria: string; skills: Skill[] }[] = [
     skills: [
       { nombre: "Python", nivel: 80 },
       { nombre: "Java / Spring Boot", nivel: 75 },
-      { nombre: "PHP", nivel: 70 },
+      { nombre: "PHP / Symfony", nivel: 70 },
       { nombre: "C# / .NET", nivel: 65 },
       { nombre: "SQL Server / MySQL", nivel: 78 },
     ],
@@ -71,6 +71,7 @@ export const skillGroups: { categoria: string; skills: Skill[] }[] = [
     skills: [
       { nombre: "Git & GitHub", nivel: 80 },
       { nombre: "Visual Studio Code", nivel: 85 },
+      { nombre: "OpenCode", nivel: 80 },
       { nombre: "Docker", nivel: 55 },
       { nombre: "Linux", nivel: 65 },
     ],
