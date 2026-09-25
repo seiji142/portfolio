@@ -12,10 +12,10 @@ export const profile = {
   disponible: true, // muestra un badge "Disponible para trabajar"
   // Texto corto para el hero (1-2 frases que te definan)
   tagline:
-    "Desarrollador con +10 años de experiencia creando soluciones que conectan personas y tecnología.",
+    "Desarrollador con +5 años de experiencia creando soluciones que conectan personas y tecnología.",
   // Descripción larga para la sección "Sobre mí"
   sobreMi:
-    "Soy Seiji Tsumura, Analista Programador egresado de la Universidad ORT con más de 10 años de experiencia en desarrollo de sistemas. Trabajé 5 años en la Jefatura de Policía de Montevideo y 2 años como encargado de sistemas en Toque y Toque. Actualmente desarrollo proyectos propios enfocados en inteligencia artificial y automatización. Me gusta aprender cosas nuevas y transformar ideas en productos funcionales.",
+    "Soy Seiji Tsumura, Analista Programador egresado de la Universidad ORT con más de 5 años de experiencia en desarrollo de sistemas. Trabajé 5 años en la Jefatura de Policía de Montevideo y 2 años como encargado de sistemas en Toque y Toque. Actualmente desarrollo proyectos propios enfocados en inteligencia artificial y automatización. Me gusta aprender cosas nuevas y transformar ideas en productos funcionales.",
   fotoUrl: "images/you26.jpg", // opcional: pon una URL o deja "" para usar iniciales
   cvUrl: "cv-seiji-tsumura.html", // enlace a tu CV en HTML
 };
