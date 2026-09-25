@@ -1,5 +1,5 @@
 # Tareas Pendientes - Portfolio AI Chat
-Ultima actualizacion: 20/09/2026
+Ultima actualizacion: 23/09/2026
 
 ---
 
@@ -14,7 +14,7 @@ Ultima actualizacion: 20/09/2026
 - [x] Actualizar github con usuario real → https://github.com/seiji142
 - [x] LinkedIn oculto por ahora
 - [x] Twitter no aplica
-- [x] Website es esta página, pendiente de subir a hosting
+- [x] Website publicado en GitHub Pages → https://seiji142.github.io/portfolio/ (deploy automatico al merge a main, 23/09/2026)
 
 ### 3. Textos personales
 - [x] Personalizar tagline en portfolio.ts (linea 14-15)
@@ -119,6 +119,18 @@ Ultima actualizacion: 20/09/2026
 
 ---
 
+## COMPLETADO 23/09/2026 — Deploy GitHub Pages
+
+- [x] Workflow CI creado (`.github/workflows/deploy.yml`): build + publish en push a `main`.
+- [x] Rutas relativas en `portfolio.ts` (imagenes, CV) + `base: "./"` en `vite.config.ts` (soporte subruta `/portfolio/`).
+- [x] Fix cards de proyectos: `isEmoji` en `Projects.tsx` detecta rutas relativas (antes las mostraba como texto).
+- [x] Sitio publicado y verificado: https://seiji142.github.io/portfolio/ (200, CV e imagenes OK).
+- [x] Flujo Git: ramas `main` (produccion, PR sin approvals) + `develop` (desarrollo) + `feature/*`.
+- [x] Proteccion de `main`: require PR sin "Require approvals" (repo personal: el autor no puede auto-aprobarse).
+- [x] Template reutilizable con lecciones reales: `docs/TEMPLATE_GITFLOW_GH_PAGES.md`.
+
+---
+
 ## Flujo de Trabajo
 
 1. El usuario proporciona sus datos personales
@@ -151,3 +163,17 @@ Ultima actualizacion: 20/09/2026
 - [x] Servidor reiniciado (auto-start del bridge tras `Stop-Process -Id 1820`; intento manual con `Start-Process` murio por Job Object — usar auto-start o `pythonw`).
 - [x] End-to-end `POST /commands/run` (`echo ok`) → `done`, stdout `ok`, returncode 0.
 - [x] End-to-end MCP en sesion nueva: `run_command("echo ok")` → `done` stdout `ok` rc 0; `run_tests("npm run build")` → warning confirmado (ep_feec58d9). Propuesta CERRADA.
+
+---
+
+## MEMORIA PENDIENTE (23/09/2026)
+
+`brain-ai` MCP no estuvo disponible en la sesion del 23/09; guardar la proxima
+sesion con `brain_ai_memory_save` (project="portfolio"):
+
+| Episodio a guardar | Tags |
+|--------------------|------|
+| Deploy GitHub Pages: workflow CI, activacion Pages (Source: GitHub Actions), error `Get Pages site failed` + re-run | deploy, github-pages, ci |
+| Fix isEmoji: rutas relativas vs heuristica (sintoma + causa + fix) | error, rutas-relativas |
+| Kit global `gitflow-scaffold/` en `C:\Users\seiji\OneDrive\Documentos\Proyecto AI\templates\` | template, scaffold |
+| Leccion approvals: repo personal → autor no puede auto-aprobar PR | git, branch-protection |
