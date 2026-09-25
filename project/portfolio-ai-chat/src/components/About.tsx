@@ -3,7 +3,7 @@ import { profile } from "../data/portfolio";
 
 export default function About() {
   const stats = [
-    { valor: "10+", label: "Años de experiencia" },
+    { valor: "5+", label: "Años de experiencia" },
     { valor: "7+", label: "Proyectos realizados" },
     { valor: "100%", label: "Compromiso" },
   ];
