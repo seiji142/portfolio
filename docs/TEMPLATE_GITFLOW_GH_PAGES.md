@@ -287,6 +287,7 @@ pasos manuales en GitHub.
 3. Verificar (no imprime el valor): `gh auth status`
 
 > Si el PAT fine-grained falla por permisos, usar un token clasico con scope `repo`.
+> Guia completa validada (paso a paso con gotchas): `docs/CONFIG_API_TOKEN_PASO_A_PASO.md`.
 
 ### 8.2 Comandos para el agente (bash)
 | Tarea | Comando |
