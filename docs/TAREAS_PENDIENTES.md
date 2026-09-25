@@ -163,3 +163,17 @@ Ultima actualizacion: 23/09/2026
 - [x] Servidor reiniciado (auto-start del bridge tras `Stop-Process -Id 1820`; intento manual con `Start-Process` murio por Job Object — usar auto-start o `pythonw`).
 - [x] End-to-end `POST /commands/run` (`echo ok`) → `done`, stdout `ok`, returncode 0.
 - [x] End-to-end MCP en sesion nueva: `run_command("echo ok")` → `done` stdout `ok` rc 0; `run_tests("npm run build")` → warning confirmado (ep_feec58d9). Propuesta CERRADA.
+
+---
+
+## MEMORIA PENDIENTE (23/09/2026)
+
+`brain-ai` MCP no estuvo disponible en la sesion del 23/09; guardar la proxima
+sesion con `brain_ai_memory_save` (project="portfolio"):
+
+| Episodio a guardar | Tags |
+|--------------------|------|
+| Deploy GitHub Pages: workflow CI, activacion Pages (Source: GitHub Actions), error `Get Pages site failed` + re-run | deploy, github-pages, ci |
+| Fix isEmoji: rutas relativas vs heuristica (sintoma + causa + fix) | error, rutas-relativas |
+| Kit global `gitflow-scaffold/` en `C:\Users\seiji\OneDrive\Documentos\Proyecto AI\templates\` | template, scaffold |
+| Leccion approvals: repo personal → autor no puede auto-aprobar PR | git, branch-protection |
