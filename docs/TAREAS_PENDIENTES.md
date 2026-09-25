@@ -177,3 +177,4 @@ sesion con `brain_ai_memory_save` (project="portfolio"):
 | Fix isEmoji: rutas relativas vs heuristica (sintoma + causa + fix) | error, rutas-relativas |
 | Kit global `gitflow-scaffold/` en `C:\Users\seiji\OneDrive\Documentos\Proyecto AI\templates\` | template, scaffold |
 | Leccion approvals: repo personal → autor no puede auto-aprobar PR | git, branch-protection |
+| Automatizacion de PRs con gh CLI + PAT: seccion 8/Fase 5 del template + script `gh-publish.ps1` (crear/mergear PRs desde el agente) | git, gh, pr, automatizacion |

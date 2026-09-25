@@ -74,3 +74,4 @@ Reglas de comportamiento:
 - `main` solo se toca para publicar, via PR desde `develop`. El deploy de GitHub Pages se dispara con el merge a `main`.
 - Tareas grandes o experimentos: crear `feature/<desc>` desde `develop` y mergear de vuelta a `develop`.
 - La proteccion de `main` es "Requerir PR" SIN "Require approvals": en repo personal el autor no puede aprobar su propio PR (bloqueo permanente si se activa).
+- Publicar: PR `develop -> main` via `gh` (PAT autenticado una vez por maquina). Script: `scripts/gh-publish.ps1 [-Merge]`. Ver seccion 8 / Fase 5 de `docs/TEMPLATE_GITFLOW_GH_PAGES.md`.
