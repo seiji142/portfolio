@@ -307,5 +307,7 @@ OBLIGATORIO para el agente: NUNCA `gh pr create` / `gh pr merge` directos.
 .\scripts\gh-publish.ps1 -Repo usuario/otro-repo              # apunta a otro repo
 ```
 - No contiene secretos: usa la credencial guardada por `gh`.
-- Flujo completo del agente: commit en rama -> `gh-publish.ps1 -Rama ... -Base develop -Merge` ->
+- Validacion pre-PR (no hay sitio de dev: Pages = 1 sitio por repo):
+  build local OK + `preview` y verificacion visual ANTES del PR.
+- Flujo completo del agente: validar en local -> commit en rama -> `gh-publish.ps1 -Rama ... -Base develop -Merge` ->
   commit en `develop` -> `gh-publish.ps1 -Merge` -> GitHub Pages se despliega solo.

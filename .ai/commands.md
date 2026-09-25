@@ -17,6 +17,15 @@
 | `git commit -m "msg"` | Commit con mensaje |
 | `git push` | Subir cambios al remote |
 
+## Validacion pre-PR (obligatoria)
+
+No hay sitio de dev (GitHub Pages = 1 sitio por repo). `develop` se valida en local
+ANTES de abrir cualquier PR:
+
+1. `npm run build` en `project/portfolio-ai-chat` → debe terminar OK.
+2. `npm run preview` → abrir http://localhost:4173 y verificar visualmente el cambio.
+3. Recien despues: commit -> PR via `scripts/gh-publish.ps1`.
+
 ## Publicacion (PRs y merges)
 
 OBLIGATORIO: NUNCA uses `gh pr create` / `gh pr merge` directos.
