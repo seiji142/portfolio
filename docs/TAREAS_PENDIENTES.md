@@ -62,6 +62,10 @@ Ultima actualizacion: 23/09/2026
 ### 9. UI / Visual
 - [ ] Decidir si reactivar íconos de redes sociales en Hero (comentado en Hero.tsx:68-89)
 
+### 10. Mantenimiento Actions (baja)
+- [ ] Subir versiones de actions (`checkout`, `setup-node`, `configure-pages`, `upload-pages-artifact`, `deploy-pages`) a versiones sobre Node 24 — deprecación de Node 20 detectada en run 36174379438 (25/09/2026)
+- [ ] Revisar migración de `ubuntu-latest` a Ubuntu 26 (anuncio: 19/10/2026)
+
 ---
 
 ## COMPLETADO 19/09/2026
