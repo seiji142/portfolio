@@ -263,3 +263,48 @@ git merge feature/<desc>
 - [ ] Settings → Pages → Source: **GitHub Actions**.
 - [ ] Sitio visible en `https://<usuario>.github.io/<repo>/`.
 - [ ] Flujo documentado en `.ai/context.md` y memoria persistente.
+
+---
+
+## 8. Automatizacion de PRs con `gh` CLI + PAT (cero friccion)
+
+Permite al agente crear y mergear PRs (`develop -> main`) desde terminal, sin
+pasos manuales en GitHub.
+
+### 8.1 Requisito: API token (PAT) — una vez por maquina
+1. En GitHub: **Settings -> Developer settings -> Personal access tokens ->
+   Fine-grained tokens -> Generate new token**:
+   - Repository access: *Only select repositories* (los proyectos que use el agente)
+   - Permissions: **Contents: Read and write**, **Pull requests: Read and
+     write**, **Actions: Read**
+   - Expiration: a eleccion (cuando expire, repetir este paso — es la unica
+     friccion recurrente del PAT)
+2. Guardar el token en `gh` (NUNCA en el repo ni en archivos del proyecto):
+   ```
+   gh auth login --hostname github.com --git-protocol https --with-token
+   ```
+   Pegar el token -> `Ctrl+Z` -> `Enter` (Windows).
+3. Verificar (no imprime el valor): `gh auth status`
+
+> Si el PAT fine-grained falla por permisos, usar un token clasico con scope `repo`.
+> Guia completa validada (paso a paso con gotchas): `docs/CONFIG_API_TOKEN_PASO_A_PASO.md`.
+
+### 8.2 Comandos para el agente (bash)
+| Tarea | Comando |
+|-------|---------|
+| Estado de PRs | `gh pr status` / `gh pr list` |
+| Crear PR | `gh pr create --base main --head <rama> --title "..." --body "..."` |
+| Mergear PR | `gh pr merge <url-PR> --merge` |
+| Ver deploys | `gh run list` / `gh run watch --exit-status` |
+
+### 8.3 Script `scripts/gh-publish.ps1`
+Publica una rama en un solo paso (ejecutar desde la raiz del repo):
+```powershell
+.\scripts\gh-publish.ps1                    # crea PR develop -> main
+.\scripts\gh-publish.ps1 -Merge             # crea PR y lo mergea (cero clics)
+.\scripts\gh-publish.ps1 -Rama feature/x    # publica otra rama
+.\scripts\gh-publish.ps1 -Repo usuario/otro-repo   # apunta a otro repo
+```
+- No contiene secretos: usa la credencial guardada por `gh`.
+- Flujo completo del agente: commit en `develop` -> `gh-publish.ps1 -Merge` ->
+  GitHub Pages se despliega solo.
