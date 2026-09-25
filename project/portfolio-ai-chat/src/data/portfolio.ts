@@ -120,6 +120,8 @@ export const projects: Project[] = [
       "Sitio web personal con asistente virtual integrado. Desarrollado con React, TypeScript y Tailwind CSS.",
     tags: ["React", "TypeScript", "Tailwind"],
     imagen: "images/projects/portfolio-web.png",
+    demo: "https://seiji142.github.io/portfolio/",
+    codigo: "https://github.com/seiji142/portfolio",
   },
 ];
 
