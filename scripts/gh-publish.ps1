@@ -3,8 +3,8 @@
 
   Requisitos:
     - git + gh CLI instalados
-    - gh autenticado UNA vez con PAT:
-      gh auth login --hostname github.com --git-protocol https --with-token
+    - Autenticacion UNA vez con PAT (ver docs/CONFIG_API_TOKEN_PASO_A_PASO.md):
+      variable de entorno User GH_TOKEN, o `gh auth login --with-token`
     - Ejecutar desde la raiz del repositorio
 
   Uso:
@@ -32,6 +32,12 @@ function Exit-WithError([string]$Mensaje) {
 
 if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
     Exit-WithError "gh CLI no esta instalado. Instalar: winget install GitHub.cli"
+}
+
+# Credencial: si el proceso no heredo GH_TOKEN (abierto antes de crearla),
+# auto-cargarla desde variables de entorno User. Nunca se imprime el valor.
+if (-not $env:GH_TOKEN) {
+    $env:GH_TOKEN = [Environment]::GetEnvironmentVariable("GH_TOKEN", "User")
 }
 
 & gh auth status *> $null
