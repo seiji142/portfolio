@@ -17,14 +17,23 @@
 | `git commit -m "msg"` | Commit con mensaje |
 | `git push` | Subir cambios al remote |
 
-## Validacion pre-PR (obligatoria)
+## Validacion pre-PR (obligatoria, bloqueante)
 
-No hay sitio de dev (GitHub Pages = 1 sitio por repo). `develop` se valida en local
-ANTES de abrir cualquier PR:
+No hay sitio de dev (GitHub Pages = 1 sitio por repo). NINGUN PR se abre
+sin completar esta checklist, sin excepciones por "cambio chico":
 
-1. `npm run build` en `project/portfolio-ai-chat` → debe terminar OK.
-2. `npm run preview` → abrir http://localhost:4173 y verificar visualmente el cambio.
-3. Recien despues: commit -> PR via `scripts/gh-publish.ps1`.
+1. [ ] `npm run build` en `project/portfolio-ai-chat` → OK.
+2. [ ] `npm run preview` → pasar la URL (http://localhost:4173) al usuario.
+3. [ ] OK visual EXPLICITO del usuario en el chat ("se ve bien").
+   Sin ese mensaje, NO hay PR. En cambios no visuales, el usuario igual
+   confirma el alcance antes del PR.
+4. [ ] Abrir el PR via `scripts/gh-publish.ps1` (SIN `-Merge` todavia).
+5. [ ] CI en verde en el PR (obligatorio; `main` lo exige por proteccion).
+6. [ ] Recien entonces: merge via script (`-Merge`) -> publish -> verificar
+   run `success` + sitio 200.
+
+Regla: el riesgo percibido NUNCA saltea pasos. Lo que no tiene evidencia
+(URL + OK del usuario + CI verde) se considera NO verificado.
 
 ## Publicacion (PRs y merges)
 
