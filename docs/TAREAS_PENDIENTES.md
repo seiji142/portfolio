@@ -62,9 +62,9 @@ Ultima actualizacion: 23/09/2026
 ### 9. UI / Visual
 - [ ] Decidir si reactivar íconos de redes sociales en Hero (comentado en Hero.tsx:68-89)
 
-### 10. Mantenimiento Actions (baja)
-- [ ] Subir versiones de actions (`checkout`, `setup-node`, `configure-pages`, `upload-pages-artifact`, `deploy-pages`) a versiones sobre Node 24 — deprecación de Node 20 detectada en run 36174379438 (25/09/2026)
-- [ ] Revisar migración de `ubuntu-latest` a Ubuntu 26 (anuncio: 19/10/2026)
+### 10. Mantenimiento Actions (baja) — COMPLETADO 25/09/2026
+- [x] Subir versiones de actions a versiones sobre Node 24 — deprecación de Node 20 del run 36174379438 resuelta: `checkout@v4→v6`, `setup-node@v4→v6` (+`node-version: 20→24`), `configure-pages@v5→v6`, `upload-pages-artifact@v3→v5`, `deploy-pages@v4→v5` (rama `feature/update-actions-node24`, verificado con run verde en `main`)
+- [x] Revisar migración de `ubuntu-latest` a Ubuntu 26 — 25/09/2026: imagen Ubuntu 26 aún no GA (anuncio 19/10/2026), se mantiene `ubuntu-latest` (hoy Ubuntu 24); re-evaluar tras el anuncio
 
 ---
 
@@ -170,15 +170,16 @@ Ultima actualizacion: 23/09/2026
 
 ---
 
-## MEMORIA PENDIENTE (23/09/2026)
+## MEMORIA PENDIENTE (23/09/2026) — COMPLETADO 25/09/2026
 
-`brain-ai` MCP no estuvo disponible en la sesion del 23/09; guardar la proxima
-sesion con `brain_ai_memory_save` (project="portfolio"):
+`brain-ai` MCP no estuvo disponible en la sesion del 23/09; guardado el
+25/09 via `POST /guardar_contexto` (equivalente REST de `brain_ai_memory_save`,
+project="portfolio", 5 episodios OK):
 
-| Episodio a guardar | Tags |
-|--------------------|------|
-| Deploy GitHub Pages: workflow CI, activacion Pages (Source: GitHub Actions), error `Get Pages site failed` + re-run | deploy, github-pages, ci |
-| Fix isEmoji: rutas relativas vs heuristica (sintoma + causa + fix) | error, rutas-relativas |
-| Kit global `gitflow-scaffold/` en `C:\Users\seiji\OneDrive\Documentos\Proyecto AI\templates\` | template, scaffold |
-| Leccion approvals: repo personal → autor no puede auto-aprobar PR | git, branch-protection |
-| Automatizacion de PRs con gh CLI + PAT: seccion 8/Fase 5 del template + script `gh-publish.ps1` (crear/mergear PRs desde el agente) | git, gh, pr, automatizacion |
+| Episodio guardado | Episode ID | Tags |
+|-------------------|------------|------|
+| [x] Deploy GitHub Pages: workflow CI, activacion Pages (Source: GitHub Actions), error `Get Pages site failed` + re-run | ep_acce2bb052ae449f9d3955ba975e3bbd | deploy, github-pages, ci |
+| [x] Fix isEmoji: rutas relativas vs heuristica (sintoma + causa + fix) | ep_f70aeca542d043c4b7926a607eae3d3d | error, rutas-relativas |
+| [x] Kit global `gitflow-scaffold/` en `C:\Users\seiji\OneDrive\Documentos\Proyecto AI\templates\` | ep_3f8ad5bf19c847ab89fc2e8b55c86b93 | template, scaffold |
+| [x] Leccion approvals: repo personal → autor no puede auto-aprobar PR | ep_566c98bc22604019a92bec9ab4e7b324 | git, branch-protection |
+| [x] Automatizacion de PRs con gh CLI + PAT: seccion 8/Fase 5 del template + script `gh-publish.ps1` (crear/mergear PRs desde el agente) | ep_85accf9398a849789f6516ed19e5d441 | git, gh, pr, automatizacion |
