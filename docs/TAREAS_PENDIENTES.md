@@ -170,15 +170,16 @@ Ultima actualizacion: 23/09/2026
 
 ---
 
-## MEMORIA PENDIENTE (23/09/2026)
+## MEMORIA PENDIENTE (23/09/2026) — COMPLETADO 25/09/2026
 
-`brain-ai` MCP no estuvo disponible en la sesion del 23/09; guardar la proxima
-sesion con `brain_ai_memory_save` (project="portfolio"):
+`brain-ai` MCP no estuvo disponible en la sesion del 23/09; guardado el
+25/09 via `POST /guardar_contexto` (equivalente REST de `brain_ai_memory_save`,
+project="portfolio", 5 episodios OK):
 
-| Episodio a guardar | Tags |
-|--------------------|------|
-| Deploy GitHub Pages: workflow CI, activacion Pages (Source: GitHub Actions), error `Get Pages site failed` + re-run | deploy, github-pages, ci |
-| Fix isEmoji: rutas relativas vs heuristica (sintoma + causa + fix) | error, rutas-relativas |
-| Kit global `gitflow-scaffold/` en `C:\Users\seiji\OneDrive\Documentos\Proyecto AI\templates\` | template, scaffold |
-| Leccion approvals: repo personal → autor no puede auto-aprobar PR | git, branch-protection |
-| Automatizacion de PRs con gh CLI + PAT: seccion 8/Fase 5 del template + script `gh-publish.ps1` (crear/mergear PRs desde el agente) | git, gh, pr, automatizacion |
+| Episodio guardado | Episode ID | Tags |
+|-------------------|------------|------|
+| [x] Deploy GitHub Pages: workflow CI, activacion Pages (Source: GitHub Actions), error `Get Pages site failed` + re-run | ep_acce2bb052ae449f9d3955ba975e3bbd | deploy, github-pages, ci |
+| [x] Fix isEmoji: rutas relativas vs heuristica (sintoma + causa + fix) | ep_f70aeca542d043c4b7926a607eae3d3d | error, rutas-relativas |
+| [x] Kit global `gitflow-scaffold/` en `C:\Users\seiji\OneDrive\Documentos\Proyecto AI\templates\` | ep_3f8ad5bf19c847ab89fc2e8b55c86b93 | template, scaffold |
+| [x] Leccion approvals: repo personal → autor no puede auto-aprobar PR | ep_566c98bc22604019a92bec9ab4e7b324 | git, branch-protection |
+| [x] Automatizacion de PRs con gh CLI + PAT: seccion 8/Fase 5 del template + script `gh-publish.ps1` (crear/mergear PRs desde el agente) | ep_85accf9398a849789f6516ed19e5d441 | git, gh, pr, automatizacion |
