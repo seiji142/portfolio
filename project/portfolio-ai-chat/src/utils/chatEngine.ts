@@ -197,7 +197,7 @@ const intents: Intent[] = [
     keywords: ["cv", "curriculum", "resume", "hoja de vida", "descargar cv"],
     respuesta: () =>
       profile.cvUrl
-        ? `Puedes descargar el CV de ${profile.nombre} aquí: ${profile.cvUrl}`
+        ? `Puedes descargar el CV de ${profile.nombre} [aquí](${profile.cvUrl}) 📄`
         : `Todavía no hay un CV en PDF cargado, pero toda la información relevante está en este sitio 😊 También puedes escribirle a ${profile.email} para solicitarlo.`,
   },
   {
