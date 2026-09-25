@@ -104,6 +104,12 @@ Tambien visible en: Win+R → `sysdm.cpl` → Avanzado → **Variables de entorn
      (la variable de entorno queda valida tal cual).
 4. **Expiracion:** al vencer (90 dias por defecto), repetir Pasos 1-3. Es la
    unica friccion recurrente del enfoque PAT.
+5. **Branch protection por API (25/09/2026):** leer o modificar la proteccion
+   (`gh api .../branches/main/protection`) devuelve `403 Resource not
+   accessible` si el PAT no tiene scope **Administracion** (Read and write).
+   Sin ese scope, activar los checks requeridos es MANUAL: repo → Settings →
+   Branches → editar regla de `main` → *Require status checks* → seleccionar
+   `build`. Para gestionarlo por API, regenerar el token sumando ese scope.
 
 ## Paso 5 — Revocacion (si se filtra o ya no se usa)
 

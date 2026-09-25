@@ -1,5 +1,5 @@
 # Tareas Pendientes - Portfolio AI Chat
-Ultima actualizacion: 23/09/2026
+Ultima actualizacion: 25/09/2026
 
 ---
 
@@ -183,3 +183,19 @@ project="portfolio", 5 episodios OK):
 | [x] Kit global `gitflow-scaffold/` en `C:\Users\seiji\OneDrive\Documentos\Proyecto AI\templates\` | ep_3f8ad5bf19c847ab89fc2e8b55c86b93 | template, scaffold |
 | [x] Leccion approvals: repo personal → autor no puede auto-aprobar PR | ep_566c98bc22604019a92bec9ab4e7b324 | git, branch-protection |
 | [x] Automatizacion de PRs con gh CLI + PAT: seccion 8/Fase 5 del template + script `gh-publish.ps1` (crear/mergear PRs desde el agente) | ep_85accf9398a849789f6516ed19e5d441 | git, gh, pr, automatizacion |
+
+---
+
+## SESION 25/09/2026
+
+- [x] Punto 10 (Actions Node 24): `checkout`/`setup-node` v6 + node 24, `configure-pages` v6, `upload-pages-artifact` v5, `deploy-pages` v5 — PR #5/#6, run verde, sin warnings Node 20
+- [x] Texto experiencia +10 → +5 años (tagline, sobreMi, CV publicado, `cv-nuevo`, `cv-op-5`, `cv-gemi-3.8`) — PR #7/#8
+- [x] Card About 10+ → 5+ (hardcodeada en `About.tsx:6`) — PR #9/#10
+- [x] Link CV clicable en chatbot (intent emite `[aquí](cvUrl)` + `renderText` soporta links) — PR #11/#12
+- [x] Tagline y perfil reescritos con voz propia del usuario (sitio + CV vigente) — PR #13/#14
+- [x] Links demo + codigo en card Portfolio — PR #19/#20
+- [x] `gh-publish.ps1`: parametro `-Base` + uso obligatorio en `.ai/commands.md` + espejo al scaffold — PR #15/#16
+- [x] Validacion local como flujo oficial (sin sitio dev: Pages = 1 sitio por repo) — PR #17/#18
+- [x] CI (`ci.yml`, job `build`) + checklist pre-PR bloqueante (6 pasos) — PR #21 abierto SIN merge, CI verde, luego merge; PR #22 a main
+- [x] Proteccion `main` con checks requeridos (`build`) — MANUAL por el usuario (PAT sin scope Administracion: API devuelve 403)
+- Leccion del dia: los docs no bastan como compuerta; hacen falta controles externos (CI + proteccion) + OK explicito del usuario

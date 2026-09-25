@@ -65,7 +65,7 @@ Portfolio personal estatico. Un solo archivo `src/data/portfolio.ts` contiene to
 
 | Rama | Proposito | Sale de | Vuelve a | Proteccion |
 |------|-----------|---------|----------|------------|
-| `main` | Produccion · deploy GitHub Pages | — | — | Requiere PR, SIN "Require approvals" |
+| `main` | Produccion · deploy GitHub Pages | — | — | Requiere PR + CI verde (`build`), SIN "Require approvals" |
 | `develop` | Desarrollo diario (rama por defecto) | `main` | `main` (PR al publicar) | No |
 | `feature/<desc>` | Cada tarea o experimento | `develop` | `develop` (PR) | No |
 
@@ -73,5 +73,5 @@ Reglas de comportamiento:
 - Trabajar SIEMPRE en `develop`. Antes de modificar, verificar la rama actual con `git status`/`git branch`; si se esta en `main`, no trabajar ahi.
 - `main` solo se toca para publicar, via PR desde `develop`. El deploy de GitHub Pages se dispara con el merge a `main`.
 - Tareas grandes o experimentos: crear `feature/<desc>` desde `develop` y mergear de vuelta a `develop`.
-- La proteccion de `main` es "Requerir PR" SIN "Require approvals": en repo personal el autor no puede aprobar su propio PR (bloqueo permanente si se activa).
-- Publicar: PR `develop -> main` via `gh` (PAT autenticado una vez por maquina). Script: `scripts/gh-publish.ps1 [-Merge]`. Ver seccion 8 / Fase 5 de `docs/TEMPLATE_GITFLOW_GH_PAGES.md`.
+- La proteccion de `main` es "Requerir PR" + "Require status checks (`build`)" SIN "Require approvals": en repo personal el autor no puede aprobar su propio PR (bloqueo permanente si se activa). Los checks se activaron manualmente (el PAT sin scope Administracion no puede por API).
+- Publicar: PR `develop -> main` via `scripts/gh-publish.ps1` (PAT autenticado una vez por maquina). `feature/x -> develop` con `-Rama feature/x -Base develop`. NUNCA `gh pr create/merge` directo. Validacion pre-PR obligatoria en `.ai/commands.md`.
