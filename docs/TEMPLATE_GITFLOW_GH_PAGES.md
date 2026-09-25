@@ -308,6 +308,8 @@ OBLIGATORIO para el agente: NUNCA `gh pr create` / `gh pr merge` directos.
 ```
 - No contiene secretos: usa la credencial guardada por `gh`.
 - Validacion pre-PR (no hay sitio de dev: Pages = 1 sitio por repo):
-  build local OK + `preview` y verificacion visual ANTES del PR.
+  build local OK + `preview` y OK visual EXPLICITO del usuario ANTES del PR.
+  El PR se abre SIN mergear, se espera el CI en verde y recien se mergea
+  (`main` exige CI verde por branch protection).
 - Flujo completo del agente: validar en local -> commit en rama -> `gh-publish.ps1 -Rama ... -Base develop -Merge` ->
   commit en `develop` -> `gh-publish.ps1 -Merge` -> GitHub Pages se despliega solo.

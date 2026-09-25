@@ -1,0 +1,26 @@
+name: CI
+
+# Compila el proyecto en cada PR y en cada push a ramas principales.
+# El merge a main esta bloqueado por branch protection hasta que este
+# workflow este en verde (ver .ai/commands.md "Validacion pre-PR").
+on:
+  pull_request:
+    branches: [main, develop]
+  push:
+    branches: [main, develop, "feature/*"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: project/portfolio-ai-chat
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: project/portfolio-ai-chat/package-lock.json
+      - run: npm ci
+      - run: npm run build
