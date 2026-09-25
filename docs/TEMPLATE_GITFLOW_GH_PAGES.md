@@ -44,8 +44,12 @@ git push -u origin develop       # tracking
 En GitHub → Settings → Branches → **Add classic branch protection rule**:
 - Branch name pattern: `main`
 - Marcar **"Require a pull request before merging"**
+- Marcar **"Require status checks to pass before merging"** y seleccionar el job `build` del workflow CI (seccion 8.4). Sin esto el CI corre pero NO bloquea merges.
 - **NO marcar "Require approvals"** (ver advertencia abajo)
 - Create
+
+> Si el PAT no tiene scope **Administracion**, este paso es MANUAL (el API
+> devuelve `403 Resource not accessible`). Ver `CONFIG_API_TOKEN_PASO_A_PASO.md`.
 
 Consecuencia: con proteccion activa no hay push directo a `main`; publicar =
 PR desde `develop`, sin necesidad de review.
@@ -311,5 +315,15 @@ OBLIGATORIO para el agente: NUNCA `gh pr create` / `gh pr merge` directos.
   build local OK + `preview` y OK visual EXPLICITO del usuario ANTES del PR.
   El PR se abre SIN mergear, se espera el CI en verde y recien se mergea
   (`main` exige CI verde por branch protection).
+
+### 8.4 Workflow CI (`.github/workflows/ci.yml`)
+
+Compila el proyecto en cada PR (a `main`/`develop`) y en cada push a
+`main`/`develop`/`feature/*`. `main` lo exige en verde por branch
+protection (Fase 3): sin esto, las compuertas son solo documentos.
+Referencia real en este repo: `.github/workflows/ci.yml` (job `build`:
+`checkout@v6` + `setup-node@v6`, node 24, `npm ci`, `npm run build`).
+En proyectos no-Node, adaptar los pasos (ver checklist Variante B en
+`.ai/commands.md` del scaffold).
 - Flujo completo del agente: validar en local -> commit en rama -> `gh-publish.ps1 -Rama ... -Base develop -Merge` ->
   commit en `develop` -> `gh-publish.ps1 -Merge` -> GitHub Pages se despliega solo.
