@@ -1,6 +1,6 @@
 # Configuracion de API Token (PAT) — Paso a Paso
 
-Playbook validado el 23/09/2026: permisos que `gh` necesita para crear y
+Playbook validado el 25/09/2026: permisos que `gh` necesita para crear y
 mergear PRs desde el agente (cero friccion en publicaciones).
 
 Resumen: se crea un **Fine-grained PAT** limitado al proyecto y se guarda en
@@ -16,8 +16,20 @@ chat, ni queda en el repo ni en archivos del proyecto.
    **Personal access tokens** → **Fine-grained tokens** →
    **Generate new token**.
 2. Configurar:
-   - **Repository access:** *Only select repositories* → elegir el proyecto
-     (ej. `seiji142/portfolio`).
+   - **Repository access:** las 3 opciones y cual elegir:
+     - ✅ **Only select repositories** → *Select repositories* → buscar y
+       seleccionar el proyecto (ej. `seiji142/portfolio`). **Elegida:** minimo
+       necesario; el token solo escribe en ese repo.
+     - ❌ **Public repositories** → **read-only** (solo lectura en repos
+       publicos). **Fue la causa real del 403** en la primera validacion:
+       `gh pr list` funcionaba pero `gh pr create` devolvia
+       `Resource not accessible by personal access token`.
+     - ⚠️ **All repositories** → funcionaria, pero da escritura en TODOS los
+       repos (actuales y futuros) — mas dano potencial si se filtra.
+     - Nota de GitHub: *"Personal access tokens can always read from all
+       public repositories"* — la **lectura de repos publicos es siempre
+       gratis**, por cualquier opcion. Por eso el fallo solo aparece al
+       **escribir** (crear/mergear PR).
    - **Permissions → Repository permissions:**
      - *Contents:* **Read and write** (necesario para mergear)
      - *Pull requests:* **Read and write** (crear/mergear PRs)
@@ -75,8 +87,21 @@ Tambien visible en: Win+R → `sysdm.cpl` → Avanzado → **Variables de entorn
    (Se inyecta solo en el proceso de `gh`; nunca se imprime.)
 2. **Verificacion sin exponer:** usar `.Length` o `gh auth status`; jamas
    imprimir el valor de la variable.
-3. **Si `gh` falla por permisos:** regenerar el token incluyendo las
-   permissions faltantes (ver Paso 1.2) y repetir Pasos 2-3.
+3. **403 `Resource not accessible by personal access token`** (validado
+   25/09/2026) — el fallo tipico al crear/mergear PR:
+   - **Concepto clave:** son DOS configuraciones distintas que pueden causarlo:
+     - *Repository access* decide **DONDE** aplica el token (seleccion del repo)
+     - *Permissions* decide **QUE** puede hacer (Pull requests en Write)
+     El 403 sale de una de las dos (o de ambas).
+   - **Diagnostico:** si la **lectura** funciona (`gh pr list`) pero la
+     **escritura** da 403, NO es limitacion de GraphQL ni de `gh`: es
+     configuracion del token. Confirmado con REST puro:
+     `gh api -X POST /repos/<owner>/<repo>/pulls ...` → tambien 403.
+   - **Solucion (sin regenerar):** en el token, (a) *Repository access* →
+     *Only select repositories* → seleccionar el repo, y (b) *Pull requests* →
+     **Read and write** (ademas *Contents* Write y *Actions* Read) → boton
+     **Update token**. El **valor NO cambia**: no hay que repetir el Paso 2
+     (la variable de entorno queda valida tal cual).
 4. **Expiracion:** al vencer (90 dias por defecto), repetir Pasos 1-3. Es la
    unica friccion recurrente del enfoque PAT.
 
