@@ -8,13 +8,25 @@ type Message = {
   text: string;
 };
 
-// Convierte **negrita** y saltos de línea en HTML simple y seguro
+// Convierte **negrita**, [texto](url) y saltos de línea en HTML simple y seguro
 function renderText(text: string) {
   const escaped = text
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
-  const withBold = escaped.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  const withLinks = escaped.replace(
+    /\[([^\]]+)\]\(([^)\s]+)\)/g,
+    (_m, label: string, url: string) => {
+      const safe = url.startsWith("http://") ||
+        url.startsWith("https://") ||
+        url.startsWith("mailto:") ||
+        !url.includes(":")
+        ? url
+        : "#";
+      return `<a href="${safe}" target="_blank" rel="noopener noreferrer" class="text-indigo-200 underline underline-offset-2 hover:text-white">${label}</a>`;
+    }
+  );
+  const withBold = withLinks.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
   return withBold.replace(/\n/g, "<br/>");
 }
 
