@@ -17,6 +17,17 @@
 | `git commit -m "msg"` | Commit con mensaje |
 | `git push` | Subir cambios al remote |
 
+## Publicacion (PRs y merges)
+
+OBLIGATORIO: NUNCA uses `gh pr create` / `gh pr merge` directos.
+Todo PR y merge pasa por `scripts/gh-publish.ps1` (ejecutar desde la raiz del repo).
+
+| Tarea | Comando |
+|-------|---------|
+| PR + merge `feature/x` -> `develop` | `.\scripts\gh-publish.ps1 -Rama feature/x -Base develop -Merge` |
+| PR + merge `develop` -> `main` (+ deploy Pages) | `.\scripts\gh-publish.ps1 -Merge` |
+| Solo crear PR (sin mergear) | Mismo comando sin `-Merge` |
+
 ## Memoria
 
 | Comando | Descripcion |

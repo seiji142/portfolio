@@ -298,13 +298,14 @@ pasos manuales en GitHub.
 | Ver deploys | `gh run list` / `gh run watch --exit-status` |
 
 ### 8.3 Script `scripts/gh-publish.ps1`
-Publica una rama en un solo paso (ejecutar desde la raiz del repo):
+Publica una rama en un solo paso (ejecutar desde la raiz del repo).
+OBLIGATORIO para el agente: NUNCA `gh pr create` / `gh pr merge` directos.
 ```powershell
-.\scripts\gh-publish.ps1                    # crea PR develop -> main
-.\scripts\gh-publish.ps1 -Merge             # crea PR y lo mergea (cero clics)
-.\scripts\gh-publish.ps1 -Rama feature/x    # publica otra rama
-.\scripts\gh-publish.ps1 -Repo usuario/otro-repo   # apunta a otro repo
+.\scripts\gh-publish.ps1                                      # crea PR develop -> main
+.\scripts\gh-publish.ps1 -Merge                               # crea PR y lo mergea (cero clics)
+.\scripts\gh-publish.ps1 -Rama feature/x -Base develop -Merge # PR feature/x -> develop + merge
+.\scripts\gh-publish.ps1 -Repo usuario/otro-repo              # apunta a otro repo
 ```
 - No contiene secretos: usa la credencial guardada por `gh`.
-- Flujo completo del agente: commit en `develop` -> `gh-publish.ps1 -Merge` ->
-  GitHub Pages se despliega solo.
+- Flujo completo del agente: commit en rama -> `gh-publish.ps1 -Rama ... -Base develop -Merge` ->
+  commit en `develop` -> `gh-publish.ps1 -Merge` -> GitHub Pages se despliega solo.
