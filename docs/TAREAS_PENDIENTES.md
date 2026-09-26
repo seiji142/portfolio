@@ -198,4 +198,5 @@ project="portfolio", 5 episodios OK):
 - [x] Validacion local como flujo oficial (sin sitio dev: Pages = 1 sitio por repo) — PR #17/#18
 - [x] CI (`ci.yml`, job `build`) + checklist pre-PR bloqueante (6 pasos) — PR #21 abierto SIN merge, CI verde, luego merge; PR #22 a main
 - [x] Proteccion `main` con checks requeridos (`build`) — MANUAL por el usuario (PAT sin scope Administracion: API devuelve 403)
+- [x] Repo privado `gitflow-scaffold` como template + release `v2026.09.25` + CHANGELOG/VERSION/guia de actualizacion (PR #27/#28) — push inicial por SSH (HTTPS cuelga), repo agregado al PAT a mano, flag template manual, Actions del kit desactivados (los samples con placeholders fallaban)
 - Leccion del dia: los docs no bastan como compuerta; hacen falta controles externos (CI + proteccion) + OK explicito del usuario
