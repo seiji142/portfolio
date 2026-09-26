@@ -75,3 +75,4 @@ Reglas de comportamiento:
 - Tareas grandes o experimentos: crear `feature/<desc>` desde `develop` y mergear de vuelta a `develop`.
 - La proteccion de `main` es "Requerir PR" + "Require status checks (`build`)" SIN "Require approvals": en repo personal el autor no puede aprobar su propio PR (bloqueo permanente si se activa). Los checks se activaron manualmente (el PAT sin scope Administracion no puede por API).
 - Publicar: PR `develop -> main` via `scripts/gh-publish.ps1` (PAT autenticado una vez por maquina). `feature/x -> develop` con `-Rama feature/x -Base develop`. NUNCA `gh pr create/merge` directo. Validacion pre-PR obligatoria en `.ai/commands.md`.
+- Kit aplicado: `gitflow-scaffold` v2026.09.25 (origen: https://github.com/seiji142/gitflow-scaffold, repo privado template).
