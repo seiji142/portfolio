@@ -10,6 +10,18 @@ Adapta los `<PLACEHOLDERS>` al proyecto concreto.
 
 ---
 
+## 0. Como actualizarse (si ya aplicaste una version anterior)
+
+1. Mira `VERSION` del kit y comparala con la anotada en tu proyecto.
+2. Lee en `CHANGELOG.md` las entradas posteriores a tu version.
+3. Aplica segun tabla (origen canonico del kit: https://github.com/seiji142/gitflow-scaffold, releases versionadas):
+
+| Version | Que re-copiar / hacer |
+|---------|----------------------|
+| 2026.09.25 | Re-copiar `scripts/gh-publish.ps1` (parametro `-Base`); agregar seccion "Publicacion" y checklist pre-PR a `.ai/commands.md`; agregar `.github/workflows/ci.yml` (adaptar `<RUTA_APP>`); activar checks requeridos en proteccion de `main` (manual si el PAT no tiene Administracion); anotar nueva version. |
+
+---
+
 ## 1. Estructura de ramas
 
 | Rama | Proposito | Sale de | Vuelve a | Proteccion |
